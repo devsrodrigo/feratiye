@@ -1,0 +1,43 @@
+'use client';
+
+import { useState } from 'react';
+
+export default function RecipeImage({
+  src,
+  alt,
+  className = '',
+  fill = false,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  fill?: boolean;
+}) {
+  const [hasError, setHasError] = useState(false);
+
+  if (hasError) {
+    return (
+      <div
+        className={`flex items-center justify-center bg-soft/20 ${
+          fill ? 'absolute inset-0' : 'w-full h-full'
+        } ${className}`}
+      >
+        <div className="text-center">
+          <span className="text-5xl block mb-2">🍽️</span>
+          <span className="text-xs text-dark/40 font-bicyclette uppercase tracking-widest">
+            Foto próximamente
+          </span>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      onError={() => setHasError(true)}
+      className={`object-cover ${fill ? 'absolute inset-0 w-full h-full' : 'w-full h-full'} ${className}`}
+    />
+  );
+}

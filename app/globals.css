@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+/* =========================
+   TAILWIND V4 THEME
+========================= */
+
+@theme {
+  --color-primary: #7A142C;
+  --color-forest: #21463E;
+  --color-soft: #c1c2a9;
+  --color-blush: #E4A2A0;
+  --color-dark: #111616;
+  --color-cream: #FAF9F6;
+
+  --font-breathing: "Breathing", serif;
+  --font-bicyclette: "Bicyclette Bold", sans-serif;
+}
+
+/* =========================
+   BRAND COLOR VARIABLES
+========================= */
+
+:root {
+  --color-primary: #7A142C;
+  --color-forest: #21463E;
+  --color-soft: #c1c2a9;
+  --color-blush: #E4A2A0;
+  --color-dark: #111616;
+  --color-cream: #FAF9F6;
+
+  --background: #ffffff;
+  --foreground: #111616;
+}
+
+/* =========================
+   CUSTOM FONTS
+========================= */
+
+@font-face {
+  font-family: "Breathing";
+  src: url("/fonts/Breathing-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bicyclette Bold";
+  src: url("/fonts/Bicyclette-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Breathing", serif;
+  line-height: 1.7;
+}
+
+/* =========================
+   TYPOGRAPHY SYSTEM
+========================= */
+
+h1, h2, h3, h4 {
+  font-family: "Breathing", serif;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+button,
+.cta,
+.nav-item {
+  font-family: "Bicyclette Bold", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =========================
+   BUTTON STYLES
+========================= */
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.9rem 2rem;
+  font-family: "Bicyclette Bold", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-forest);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border: 1.5px solid currentColor;
+  color: var(--color-dark);
+  padding: 0.9rem 2rem;
+  font-family: "Bicyclette Bold", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-outline:hover {
+  background-color: var(--color-soft);
+  border-color: var(--color-soft);
+  transform: translateY(-1px);
+}
+
+.btn-outline-white {
+  border: 1.5px solid rgba(255,255,255,0.6);
+  color: white;
+  padding: 0.9rem 2rem;
+  font-family: "Bicyclette Bold", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-outline-white:hover {
+  background-color: rgba(255,255,255,0.15);
+  border-color: white;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   EDITORIAL UTILITIES
+========================= */
+
+.editorial-rule {
+  width: 60px;
+  height: 1px;
+  background-color: var(--color-primary);
+  margin: 1.5rem auto;
+}
+
+.section-label {
+  font-family: "Bicyclette Bold", sans-serif;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--color-primary);
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-soft);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-forest);
+}
