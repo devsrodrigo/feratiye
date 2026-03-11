@@ -7,7 +7,16 @@ import RecipeImage from './RecipeImage';
 export default function ProductCard({ product }: { product: Product }) {
   const router = useRouter();
 
-  const handleClick = () => {
+  const handleClick = async () => {
+    try {
+      await fetch('/feratiye/api/product-click', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ productId: product.id }),
+      });
+    } catch (error) {
+      console.error('Error tracking click:', error);
+    }
     router.push(`/productos/${product.slug}`);
   };
 

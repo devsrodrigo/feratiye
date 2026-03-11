@@ -41,6 +41,8 @@ function formatDate(dateStr: string | null): string {
   });
 }
 
+export const dynamic = 'force-dynamic';
+
 export default function AdminPage() {
   const data = getClickData();
   const entries = Object.entries(data);
