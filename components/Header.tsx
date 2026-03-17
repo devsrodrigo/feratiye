@@ -103,11 +103,11 @@ export default function Header() {
                         : 'opacity-0 invisible -translate-y-2'
                     }`}
                   >
-                    <div className="bg-white rounded-lg shadow-xl border border-gray-100 p-8 w-[520px]">
+                    <div className="bg-white rounded-lg shadow-xl border border-gray-100 p-8 min-w-[700px]">
                       <p className="section-label text-xs mb-5 text-primary">
                         Explora por categoría
                       </p>
-                      <div className="grid grid-cols-3 gap-x-8 gap-y-3">
+                      <div className="grid grid-cols-3 gap-x-8 gap-y-4">
                         {categories.map((cat) => (
                           <Link
                             key={cat}
@@ -123,7 +123,7 @@ export default function Header() {
                         <Link
                           href="/recetas"
                           onClick={() => setMegaMenuVisible(false)}
-                          className="text-primary text-sm font-bicyclette uppercase tracking-wider hover:text-forest transition-colors"
+                          className="text-primary text-sm uppercase tracking-wider hover:text-forest transition-colors"
                         >
                           Ver todas las recetas →
                         </Link>
@@ -245,7 +245,7 @@ export default function Header() {
                       <Link
                         href="/recetas"
                         onClick={() => setMobileOpen(false)}
-                        className="block text-primary font-bicyclette uppercase tracking-wider text-xs pt-3 border-t border-gray-100 mt-3"
+                        className="block text-primary uppercase tracking-wider text-xs pt-3 border-t border-gray-100 mt-3"
                       >
                         Ver todas →
                       </Link>

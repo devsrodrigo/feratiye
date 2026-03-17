@@ -24,7 +24,7 @@ export default function RecipeImage({
       >
         <div className="text-center">
           <span className="text-5xl block mb-2">🍽️</span>
-          <span className="text-xs text-dark/40 font-bicyclette uppercase tracking-widest">
+          <span className="text-xs text-dark/40 uppercase tracking-widest">
             Foto próximamente
           </span>
         </div>

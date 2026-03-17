@@ -81,7 +81,7 @@ h1, h2, h3, h4 {
 button,
 .cta,
 .nav-item {
-  font-family: "Bicyclette Bold", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -94,7 +94,7 @@ button,
   background-color: var(--color-primary);
   color: white;
   padding: 0.9rem 2rem;
-  font-family: "Bicyclette Bold", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-size: 0.85rem;
@@ -112,7 +112,7 @@ button,
   border: 1.5px solid currentColor;
   color: var(--color-dark);
   padding: 0.9rem 2rem;
-  font-family: "Bicyclette Bold", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-size: 0.85rem;
@@ -131,7 +131,7 @@ button,
   border: 1.5px solid rgba(255,255,255,0.6);
   color: white;
   padding: 0.9rem 2rem;
-  font-family: "Bicyclette Bold", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-size: 0.85rem;
@@ -158,7 +158,7 @@ button,
 }
 
 .section-label {
-  font-family: "Bicyclette Bold", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   font-size: 0.75rem;

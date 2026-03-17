@@ -35,11 +35,11 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center px-6 py-20">
-          <p className="font-bicyclette uppercase tracking-[0.3em] text-blush/80 text-xs mb-8">
+          <p className="uppercase tracking-[0.3em] text-blush/80 text-xs mb-8">
             Fernando Atiye
           </p>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-8 leading-[1.1]">
+          <h1 className="font-bicyclette text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-8 leading-[1.1]">
             Cocinar rico no tiene por qué ser complicado
           </h1>
 
@@ -93,7 +93,7 @@ export default function HomePage() {
               </p>
               <Link
                 href="/historia"
-                className="inline-block mt-8 text-primary font-bicyclette uppercase tracking-widest text-xs hover:text-forest transition-colors"
+                className="inline-block mt-8 text-primary uppercase tracking-widest text-xs hover:text-forest transition-colors"
               >
                 Leer mi historia completa →
               </Link>
@@ -141,7 +141,7 @@ export default function HomePage() {
                   <h3 className="text-sm lg:text-base text-dark group-hover:text-primary transition-colors leading-tight">
                     {cat}
                   </h3>
-                  <p className="mt-1 text-[11px] text-dark/40 font-bicyclette uppercase tracking-widest">
+                  <p className="mt-1 text-[11px] text-dark/40 uppercase tracking-widest">
                     {count} {count === 1 ? 'receta' : 'recetas'}
                   </p>
                 </Link>
@@ -163,7 +163,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/recetas"
-              className="text-primary font-bicyclette uppercase tracking-widest text-xs hover:text-forest transition-colors shrink-0"
+              className="text-primary uppercase tracking-widest text-xs hover:text-forest transition-colors shrink-0"
             >
               Ver todas →
             </Link>

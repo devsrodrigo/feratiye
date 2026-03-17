@@ -30,7 +30,7 @@ export default async function RecetasPage({
       <section className="bg-cream py-16 lg:py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <p className="section-label mb-4">Recetario</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4">
+          <h1 className="font-bicyclette text-4xl md:text-5xl lg:text-6xl mb-4">
             {activeCategory || 'Todas las Recetas'}
           </h1>
           <div className="editorial-rule" />
@@ -48,7 +48,7 @@ export default async function RecetasPage({
           <div className="flex items-center gap-3 overflow-x-auto scrollbar-hide pb-1">
             <Link
               href="/recetas"
-              className={`shrink-0 px-4 py-2 rounded-full text-xs font-bicyclette uppercase tracking-wider transition-all ${
+                className={`shrink-0 px-4 py-2 rounded-full text-xs uppercase tracking-wider transition-all ${
                 !categoria
                   ? 'bg-primary text-white'
                   : 'bg-gray-100 text-dark/60 hover:bg-gray-200'
@@ -63,7 +63,7 @@ export default async function RecetasPage({
                 <Link
                   key={cat}
                   href={`/recetas?categoria=${catSlug}`}
-                  className={`shrink-0 px-4 py-2 rounded-full text-xs font-bicyclette uppercase tracking-wider transition-all ${
+                  className={`shrink-0 px-4 py-2 rounded-full text-xs uppercase tracking-wider transition-all ${
                     isActive
                       ? 'bg-primary text-white'
                       : 'bg-gray-100 text-dark/60 hover:bg-gray-200'
@@ -82,7 +82,7 @@ export default async function RecetasPage({
         <div className="max-w-7xl mx-auto">
           {filtered.length > 0 ? (
             <>
-              <p className="text-dark/40 text-xs font-bicyclette uppercase tracking-widest mb-8">
+              <p className="text-dark/40 text-xs uppercase tracking-widest mb-8">
                 {filtered.length} {filtered.length === 1 ? 'receta' : 'recetas'}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

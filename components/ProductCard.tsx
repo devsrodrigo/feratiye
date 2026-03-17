@@ -41,13 +41,13 @@ export default function ProductCard({ product }: { product: Product }) {
           <h3 className="text-lg lg:text-xl text-dark group-hover:text-primary transition-colors duration-300 leading-tight">
             {product.name}
           </h3>
-          <span className="text-primary font-bicyclette text-sm shrink-0">{product.price}</span>
+          <span className="text-primary text-sm shrink-0">{product.price}</span>
         </div>
         <p className="text-dark/60 text-sm leading-relaxed line-clamp-2">
           {product.description}
         </p>
 
-        <div className="mt-4 inline-flex items-center gap-2 text-primary text-xs font-bicyclette uppercase tracking-widest">
+        <div className="mt-4 inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest">
           <span>Ver más</span>
           <svg
             className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform"

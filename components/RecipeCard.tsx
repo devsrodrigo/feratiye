@@ -22,7 +22,7 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
 
         {/* Category Badge */}
         <div className="absolute top-3 left-3">
-          <span className="inline-block bg-white/90 backdrop-blur-sm text-dark px-3 py-1 text-[10px] font-bicyclette uppercase tracking-widest rounded-sm">
+          <span className="inline-block bg-white/90 backdrop-blur-sm text-dark px-3 py-1 text-[10px] uppercase tracking-widest rounded-sm">
             {recipe.category}
           </span>
         </div>
@@ -39,7 +39,7 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
 
         {/* Arrow indicator */}
         <div className="mt-4 flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-0 group-hover:translate-x-1">
-          <span className="text-xs font-bicyclette uppercase tracking-widest">Ver receta</span>
+          <span className="text-xs uppercase tracking-widest">Ver receta</span>
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>

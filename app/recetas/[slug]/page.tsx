@@ -67,7 +67,7 @@ export default async function RecipeDetailPage({
         <div className="absolute top-6 left-6 z-10">
           <Link
             href="/recetas"
-            className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-bicyclette uppercase tracking-wider text-dark hover:bg-white transition-colors"
+            className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-xs uppercase tracking-wider text-dark hover:bg-white transition-colors"
           >
             <svg
               className="w-3.5 h-3.5"
@@ -89,7 +89,7 @@ export default async function RecipeDetailPage({
         {/* Category + Title overlay */}
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 lg:p-16">
           <div className="max-w-4xl">
-            <span className="inline-block bg-primary text-white px-3 py-1 text-[10px] font-bicyclette uppercase tracking-widest rounded-sm mb-4">
+            <span className="inline-block bg-primary text-white px-3 py-1 text-[10px] uppercase tracking-widest rounded-sm mb-4">
               {recipe.category}
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl text-white leading-tight">
@@ -105,7 +105,7 @@ export default async function RecipeDetailPage({
           {/* TikTok CTA */}
           <div className="mb-12">
             <a
-              href={recipe.tiktok}
+              href={recipe.tiktokUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center gap-3"
@@ -150,7 +150,7 @@ export default async function RecipeDetailPage({
             <ol className="space-y-6">
               {recipe.steps.map((step, i) => (
                 <li key={i} className="flex gap-4">
-                  <span className="text-3xl text-primary/20 font-bicyclette leading-none mt-1 shrink-0 w-8">
+                  <span className="text-3xl text-primary/20 leading-none mt-1 shrink-0 w-8">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <p className="text-dark/80 leading-relaxed text-base pt-1">
@@ -168,7 +168,7 @@ export default async function RecipeDetailPage({
               Mira el video completo con todos los detalles y tips.
             </p>
             <a
-              href={recipe.tiktok}
+              href={recipe.tiktokUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary inline-flex items-center gap-2"

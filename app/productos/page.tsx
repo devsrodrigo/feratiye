@@ -15,7 +15,7 @@ export default function ProductosPage() {
       <section className="bg-cream py-16 lg:py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <p className="section-label mb-4">Hecho a mano</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl mb-4">
+          <h1 className="font-bicyclette text-4xl md:text-5xl lg:text-6xl mb-4">
             Productos Artesanales
           </h1>
           <div className="editorial-rule" />

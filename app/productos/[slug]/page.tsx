@@ -49,7 +49,7 @@ export default async function ProductDetailPage({
           {/* Back button */}
           <Link
             href="/productos"
-            className="inline-flex items-center gap-2 text-dark/60 hover:text-primary transition-colors text-sm font-bicyclette uppercase tracking-wider mb-10"
+            className="inline-flex items-center gap-2 text-dark/60 hover:text-primary transition-colors text-sm uppercase tracking-wider mb-10"
           >
             <svg
               className="w-3.5 h-3.5"
@@ -88,7 +88,7 @@ export default async function ProductDetailPage({
 
               {/* SOLD OUT Banner */}
               <div className="bg-dark text-white text-center py-6 px-8 rounded-lg">
-                <p className="font-bicyclette uppercase tracking-[0.2em] text-2xl md:text-3xl mb-2">
+                <p className="uppercase tracking-[0.2em] text-2xl md:text-3xl mb-2">
                   Sold Out
                 </p>
                 <p className="text-white/60 text-sm">

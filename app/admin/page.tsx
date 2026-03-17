@@ -62,15 +62,15 @@ export default function AdminPage() {
         {/* Stats Summary */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
           <div className="bg-cream rounded-lg p-5 text-center">
-            <p className="text-3xl font-bicyclette text-primary">{totalClicks}</p>
-            <p className="text-xs text-dark/50 font-bicyclette uppercase tracking-wider mt-1">
+            <p className="text-3xl text-primary">{totalClicks}</p>
+            <p className="text-xs text-dark/50 uppercase tracking-wider mt-1">
               Total Clics
             </p>
           </div>
           {entries.map(([key, value]) => (
             <div key={key} className="bg-cream rounded-lg p-5 text-center">
-              <p className="text-3xl font-bicyclette text-forest">{value.clicks}</p>
-              <p className="text-xs text-dark/50 font-bicyclette uppercase tracking-wider mt-1">
+              <p className="text-3xl text-forest">{value.clicks}</p>
+              <p className="text-xs text-dark/50 uppercase tracking-wider mt-1">
                 {productNames[key] ? productNames[key].split(' ')[0] : key}
               </p>
             </div>
@@ -83,13 +83,13 @@ export default function AdminPage() {
             <table className="w-full">
               <thead>
                 <tr className="border-b border-gray-200 bg-cream/50">
-                  <th className="text-left py-4 px-6 text-xs font-bicyclette uppercase tracking-wider text-dark/60">
+                  <th className="text-left py-4 px-6 text-xs uppercase tracking-wider text-dark/60">
                     Producto
                   </th>
-                  <th className="text-center py-4 px-6 text-xs font-bicyclette uppercase tracking-wider text-dark/60">
+                  <th className="text-center py-4 px-6 text-xs uppercase tracking-wider text-dark/60">
                     Total Clics
                   </th>
-                  <th className="text-right py-4 px-6 text-xs font-bicyclette uppercase tracking-wider text-dark/60">
+                  <th className="text-right py-4 px-6 text-xs uppercase tracking-wider text-dark/60">
                     Último Clic
                   </th>
                 </tr>
@@ -107,7 +107,7 @@ export default function AdminPage() {
                       <p className="text-xs text-dark/40 mt-0.5">ID: {key}</p>
                     </td>
                     <td className="py-4 px-6 text-center">
-                      <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-bicyclette">
+                      <span className="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
                         {value.clicks}
                       </span>
                     </td>

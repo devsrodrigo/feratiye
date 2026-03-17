@@ -13,10 +13,10 @@ export default function HistoriaPage() {
       {/* Hero */}
       <section className="bg-primary py-20 lg:py-32 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="font-bicyclette uppercase tracking-[0.3em] text-blush/80 text-xs mb-6">
+          <p className="uppercase tracking-[0.3em] text-blush/80 text-xs mb-6">
             Detrás de cada receta
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl text-white mb-6">
+          <h1 className="font-bicyclette text-4xl md:text-5xl lg:text-6xl text-white mb-6">
             Mi Historia
           </h1>
           <div className="editorial-rule !bg-blush/50" />
@@ -108,7 +108,7 @@ export default function HistoriaPage() {
               &ldquo;Cada platillo que preparo lleva un pedacito de historia familiar, de cariño 
               y de las ganas de que quien lo pruebe lo disfrute tanto como yo al cocinarlo.&rdquo;
             </blockquote>
-            <p className="mt-6 text-dark/40 text-sm font-bicyclette uppercase tracking-widest">
+            <p className="mt-6 text-dark/40 text-sm uppercase tracking-widest">
               — Fernando Atiye
             </p>
           </div>
@@ -186,7 +186,7 @@ export default function HistoriaPage() {
               Y sin más, comencemos…
             </p>
             <p className="text-3xl md:text-4xl text-primary">¡Venga!</p>
-            <p className="mt-4 text-dark/40 text-sm font-bicyclette uppercase tracking-widest">
+            <p className="mt-4 text-dark/40 text-sm uppercase tracking-widest">
               Fernando Atiye
             </p>
           </div>

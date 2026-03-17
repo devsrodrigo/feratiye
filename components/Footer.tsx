@@ -15,12 +15,12 @@ export default function Footer() {
               Cocinar rico no tiene por qué ser complicado. Recetas caseras, prácticas y llenas
               de sabor.
             </p>
-            <p className="text-primary font-bicyclette tracking-wider text-sm">¡Venga!</p>
+            <p className="text-primary tracking-wider text-sm">¡Venga!</p>
           </div>
 
           {/* Navigation */}
           <div>
-            <p className="font-bicyclette uppercase tracking-widest text-xs text-white/40 mb-5">
+            <p className="uppercase tracking-widest text-xs text-white/40 mb-5">
               Navegación
             </p>
             <ul className="space-y-3">
@@ -58,7 +58,7 @@ export default function Footer() {
 
           {/* Categorías */}
           <div>
-            <p className="font-bicyclette uppercase tracking-widest text-xs text-white/40 mb-5">
+            <p className="uppercase tracking-widest text-xs text-white/40 mb-5">
               Categorías
             </p>
             <ul className="space-y-3">
@@ -107,7 +107,7 @@ export default function Footer() {
 
           {/* Redes Sociales */}
           <div>
-            <p className="font-bicyclette uppercase tracking-widest text-xs text-white/40 mb-5">
+            <p className="uppercase tracking-widest text-xs text-white/40 mb-5">
               Redes Sociales
             </p>
             <ul className="space-y-3">
