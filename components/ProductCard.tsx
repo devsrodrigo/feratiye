@@ -9,7 +9,7 @@ export default function ProductCard({ product }: { product: Product }) {
 
   const handleClick = async () => {
     try {
-      await fetch('/feratiye/api/product-click', {
+      await fetch('/api/product-click', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ productId: product.id }),

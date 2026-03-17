@@ -1,8 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Serve the entire feratiye app under /feratiye on niche.com.mx
-  basePath: "/feratiye",
+  // Ensure Next resolves this folder as the workspace root when multiple lockfiles exist.
+  turbopack: {
+    root: __dirname,
+  },
 };
 
 export default nextConfig;

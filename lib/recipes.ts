@@ -28,14 +28,9 @@ export const categories = [
  * Ejemplo: "Pay de Plátano con Cajeta y Nuez" → "/images/PaydePlatanoconCajetayNuez.png"
  */
 export function formatImageName(title: string): string {
-  return (
-    '/images/' +
-    title
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^a-zA-Z0-9]/g, '') +
-    '.png'
-  );
+  // Return a known existing placeholder so pages never reference missing files in production.
+  void title;
+  return '/images/feratiyemain.JPG';
 }
 
 /**

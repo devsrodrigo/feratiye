@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Fernando Atiye — Cocinar rico no tiene por qué ser complicado',
     description:
       'Recetas caseras, prácticas y llenas de sabor por Fernando Atiye.',
-    url: 'https://www.niche.com.mx/feratiye',
+    url: 'https://feratiye.niche.com.mx',
     siteName: 'Fernando Atiye',
     locale: 'es_MX',
     type: 'website',

@@ -55,5 +55,6 @@ export function getProductBySlug(slug: string): Product | undefined {
 }
 
 export function formatProductImage(slug: string): string {
-  return `/images/products/${slug}.png`;
+  void slug;
+  return '/images/feratiyemain.JPG';
 }

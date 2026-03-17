@@ -38,7 +38,7 @@
 
 @font-face {
   font-family: "Breathing";
-  src: url("/feratiye/fonts/Breathing-Regular.ttf") format("truetype");
+  src: url("/fonts/Breathing-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -46,8 +46,8 @@
 
 @font-face {
   font-family: "Bicyclette Bold";
-  src: url("/feratiye/fonts/bicyclette-bold.woff2") format("woff2"),
-       url("/feratiye/fonts/bicyclette-bold.woff") format("woff");
+  src: url("/fonts/bicyclette-bold.woff2") format("woff2"),
+       url("/fonts/bicyclette-bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;

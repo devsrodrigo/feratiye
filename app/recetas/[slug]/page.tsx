@@ -30,7 +30,7 @@ export async function generateMetadata({
       title: `${recipe.title} — Fernando Atiye`,
       description: recipe.description,
       type: 'article',
-      url: `https://www.niche.com.mx/feratiye/recetas/${slug}`,
+      url: `https://feratiye.niche.com.mx/recetas/${slug}`,
     },
   };
 }
