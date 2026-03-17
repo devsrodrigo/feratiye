@@ -39,7 +39,7 @@ export default function HomePage() {
             Fernando Atiye
           </p>
 
-          <h1 className="font-bicyclette text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-8 leading-[1.1]">
+          <h1 className="font-breathing text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-8 leading-[1.1]">
             Cocinar rico no tiene por qué ser complicado
           </h1>
 

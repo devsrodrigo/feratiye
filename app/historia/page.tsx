@@ -16,7 +16,7 @@ export default function HistoriaPage() {
           <p className="uppercase tracking-[0.3em] text-blush/80 text-xs mb-6">
             Detrás de cada receta
           </p>
-          <h1 className="font-bicyclette text-4xl md:text-5xl lg:text-6xl text-white mb-6">
+          <h1 className="font-breathing text-4xl md:text-5xl lg:text-6xl text-white mb-6">
             Mi Historia
           </h1>
           <div className="editorial-rule !bg-blush/50" />
