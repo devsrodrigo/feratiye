@@ -2793,8 +2793,31 @@ export function getRecipesByCategory(category: Category): Recipe[] {
   return recipes.filter((r) => r.category === category);
 }
 
+const recipeImageAliases: Record<string, string> = {
+  mmsblondies: 'MMBlondies',
+  paydeplatanoconcajetaynuez: 'PaydePlatanoconCajetayNuez',
+  salsadejalapenoconcilantro: 'SalsadeJalapenoconCilantro',
+  huevoconchicharronensalsaroja: 'HuevoconChicharronenSalsaRoja',
+  pastaconsalmon: 'PastaconSalmon',
+  tacosarabes: 'TacosArabes',
+  tacosdeatunalpastor: 'TacosdeAtunalPastor',
+  quesadillasdepollocajun: 'QuesadillasdePolloCajun',
+  albondigasensalsachipotle: 'AlbondigasenSalsaChipotle',
+  polloalapina: 'PolloalaPina',
+  jalapenochicken: 'JalapenoChicken',
+};
+
 export function formatImageName(title: string): string {
-  return title
+  const directName = title
     .replace(/\s+/g, '')
     .replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑüÜ0-9&]/g, '');
+
+  const normalizedKey = title
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]/g, '');
+
+  const resolvedName = recipeImageAliases[normalizedKey] || directName;
+  return `/images/recipes/${resolvedName}.png`;
 }

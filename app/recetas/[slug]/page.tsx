@@ -108,12 +108,12 @@ export default async function RecipeDetailPage({
               href={recipe.tiktokUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center gap-3"
+              className="btn-primary inline-flex items-center justify-center gap-3 whitespace-nowrap"
             >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46v-7.15a8.16 8.16 0 005.58 2.2v-3.45a4.85 4.85 0 01-2-.57l.01-.01V6.69h2z" />
               </svg>
-              Ver preparación en TikTok
+              <span>Ver preparación en TikTok</span>
             </a>
           </div>
 
@@ -171,12 +171,12 @@ export default async function RecipeDetailPage({
               href={recipe.tiktokUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center gap-2"
+              className="btn-primary inline-flex items-center justify-center gap-2 whitespace-nowrap"
             >
-              Ver en TikTok
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46v-7.15a8.16 8.16 0 005.58 2.2v-3.45a4.85 4.85 0 01-2-.57l.01-.01V6.69h2z" />
               </svg>
+              <span>Ver en TikTok →</span>
             </a>
           </div>
         </div>

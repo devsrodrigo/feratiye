@@ -7,6 +7,23 @@ export const metadata: Metadata = {
   title: 'Fernando Atiye — Cocinar rico no tiene por qué ser complicado',
   description:
     'Recetas caseras, prácticas y llenas de sabor. Más de 4 años compartiendo mi pasión por la cocina. ¡Venga!',
+  icons: {
+    icon: [
+      {
+        url: '/icon.png',
+        type: 'image/png',
+        sizes: '512x512',
+      },
+    ],
+    shortcut: ['/icon.png'],
+    apple: [
+      {
+        url: '/icon.png',
+        type: 'image/png',
+        sizes: '180x180',
+      },
+    ],
+  },
   openGraph: {
     title: 'Fernando Atiye — Cocinar rico no tiene por qué ser complicado',
     description:
@@ -33,7 +50,7 @@ export default function RootLayout({
     <html lang="es">
       <body className="antialiased">
         <Header />
-        <main className="pt-20">{children}</main>
+        <main className="pt-24">{children}</main>
         <Footer />
       </body>
     </html>

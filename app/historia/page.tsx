@@ -149,7 +149,7 @@ export default function HistoriaPage() {
                 Están pensadas tanto para quienes están dando sus primeros pasos en la cocina, como 
                 para quienes ya disfrutan cocinar y quieren seguir aprendiendo y explorando.
               </p>
-              <p className="text-dark font-medium text-xl md:text-2xl italic">
+              <p className="text-dark font-medium text-xl md:text-2xl">
                 Cocinar rico no tiene por qué ser complicado.
               </p>
             </div>
