@@ -55,6 +55,12 @@ export function getProductBySlug(slug: string): Product | undefined {
 }
 
 export function formatProductImage(slug: string): string {
-  void slug;
-  return '/images/feratiyemain.JPG';
+  const productImages: Record<string, string> = {
+    alioli: '/images/products/Artisanaliolijarcloseup.png',
+    chile: '/images/products/ChiledeArbolenPolvoPremium.png',
+    matcha: '/images/products/SalsaMatchaEstiloFusionjar.png',
+    ajo_perejil: '/images/products/Garlicandparsleyseasoningjar.png',
+  };
+
+  return productImages[slug] ?? '/images/feratiyemain.JPG';
 }
