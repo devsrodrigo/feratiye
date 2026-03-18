@@ -5,18 +5,18 @@ import { products } from '@/lib/products';
 import RecipeCard from '@/components/RecipeCard';
 import ProductCard from '@/components/ProductCard';
 
-const categoryEmojis: Record<string, string> = {
-  Postres: '🍰',
-  'Dips y Aderezos': '🫕',
-  'Salsas y Acompañamientos': '🌶️',
-  Drinks: '🍹',
-  Desayunos: '🍳',
-  Pastas: '🍝',
-  Botanas: '🍿',
-  Pescado: '🐟',
-  'Comida Casera': '🍲',
-  'Comida China': '🥡',
-  Arroz: '🍚',
+const categoryIcons: Record<string, string> = {
+  Postres: '/foodicons/postres.png',
+  'Dips y Aderezos': '/foodicons/dips.png',
+  'Salsas y Acompañamientos': '/foodicons/salsas.png',
+  Drinks: '/foodicons/drinks.png',
+  Desayunos: '/foodicons/desayunos.png',
+  Pastas: '/foodicons/pastas.png',
+  Botanas: '/foodicons/botanas.png',
+  Pescado: '/foodicons/pescado.png',
+  'Comida Casera': '/foodicons/comidacasera.png',
+  'Comida China': '/foodicons/comidachina.png',
+  Arroz: '/foodicons/arroz.png',
 };
 
 export default function HomePage() {
@@ -135,8 +135,15 @@ export default function HomePage() {
                   href={`/recetas?categoria=${generateSlug(cat)}`}
                   className="group bg-white rounded-lg p-5 lg:p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 text-center"
                 >
-                  <span className="text-3xl block mb-3">
-                    {categoryEmojis[cat] || '🍴'}
+                  <span className="block mb-3">
+                    <Image
+                      src={categoryIcons[cat] || '/foodicons/dips.png'}
+                      alt={cat}
+                      width={40}
+                      height={40}
+                      style={{ display: 'inline-block', verticalAlign: 'middle' }}
+                      className="mx-auto"
+                    />
                   </span>
                   <h3 className="text-sm lg:text-base text-dark group-hover:text-primary transition-colors leading-tight">
                     {cat}
