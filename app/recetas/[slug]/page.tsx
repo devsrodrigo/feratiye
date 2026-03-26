@@ -59,42 +59,46 @@ export default async function RecipeDetailPage({
   return (
     <>
       {/* Hero Image */}
-      <section className="relative w-full h-[40vh] md:h-[50vh] lg:h-[60vh] bg-cream overflow-hidden">
-        <RecipeImage src={imageSrc} alt={recipe.title} fill />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-dark/20 to-transparent" />
+      <section className="bg-cream px-4 sm:px-6 pt-8 md:pt-10 lg:pt-12">
+        <div className="max-w-5xl mx-auto">
+          <div className="relative aspect-[16/11] md:aspect-[16/10] overflow-hidden rounded-2xl">
+            <RecipeImage src={imageSrc} alt={recipe.title} fill />
+            <div className="absolute inset-0 bg-gradient-to-t from-dark/60 via-dark/20 to-transparent" />
 
-        {/* Back button */}
-        <div className="absolute top-6 left-6 z-10">
-          <Link
-            href="/recetas"
-            className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-xs uppercase tracking-wider text-dark hover:bg-white transition-colors"
-          >
-            <svg
-              className="w-3.5 h-3.5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M10 19l-7-7m0 0l7-7m-7 7h18"
-              />
-            </svg>
-            Recetas
-          </Link>
-        </div>
+            {/* Back button */}
+            <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-10">
+              <Link
+                href="/recetas"
+                className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-xs uppercase tracking-wider text-dark hover:bg-white transition-colors"
+              >
+                <svg
+                  className="w-3.5 h-3.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                  />
+                </svg>
+                Recetas
+              </Link>
+            </div>
 
-        {/* Category + Title overlay */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 lg:p-16">
-          <div className="max-w-4xl">
-            <span className="inline-block bg-primary text-white px-3 py-1 text-[10px] uppercase tracking-widest rounded-sm mb-4">
-              {recipe.category}
-            </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl text-white leading-tight">
-              {recipe.title}
-            </h1>
+            {/* Category + Title overlay */}
+            <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8 lg:p-10">
+              <div className="max-w-3xl">
+                <span className="inline-block bg-primary text-white px-3 py-1 text-[10px] uppercase tracking-widest rounded-sm mb-4">
+                  {recipe.category}
+                </span>
+                <h1 className="text-2xl md:text-4xl lg:text-5xl text-white leading-tight">
+                  {recipe.title}
+                </h1>
+              </div>
+            </div>
           </div>
         </div>
       </section>
