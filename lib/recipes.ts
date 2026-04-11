@@ -954,7 +954,7 @@ export const recipes: Recipe[] = [
       'Cierra con un toque de miel Karo sin azúcar.',
     ],
   },
-  {
+  /*{
     title: 'Hot Cakes de Avena con Plátano',
     slug: generateSlug('Hot Cakes de Avena con Plátano'),
     category: 'Desayunos',
@@ -977,7 +977,7 @@ export const recipes: Recipe[] = [
       'Espera a que la mezcla burbujee para darle la vuelta.',
       'Corona con rodajas de plátano y un poco más de miel de abeja.',
     ],
-  },
+  },*/
   {
     title: 'Mini Bagels de Huevo con Tocino',
     slug: generateSlug('Mini Bagels de Huevo con Tocino'),
@@ -1005,7 +1005,7 @@ export const recipes: Recipe[] = [
       'Unta el aderezo en los bagels, agrega el tocino y el huevo, y cierra con la tapa de queso derretido.',
     ],
   },
-  {
+  /*{
     title: 'Chilaquiles Rojos',
     slug: generateSlug('Chilaquiles Rojos'),
     category: 'Desayunos',
@@ -1036,37 +1036,7 @@ export const recipes: Recipe[] = [
       'Cocina por unos minutos para que los totopos se impregnen con la salsa.',
       'Sirve y añade queso fresco, crema y aguacate al gusto. Porción para dos personas.',
     ],
-  },
-  {
-    title: 'Molletes con Pico de Gallo',
-    slug: generateSlug('Molletes con Pico de Gallo'),
-    category: 'Desayunos',
-    description: 'Bolillos crujientes con frijoles, chorizo de pavo y queso fundido. Un desayuno que no falla.',
-    image: '',
-    tiktokUrl: 'https://vm.tiktok.com/ZMMKccTpc/',
-    ingredients: [
-      'Aceite Vegetal',
-      '250 g de Chorizo de Pavo',
-      '1 Cebolla',
-      '3 Chiles Serranos',
-      '400 g de Frijoles Bayos Refritos',
-      'Queso Manchego Rallado al gusto',
-      '3 Bolillos',
-      '1 Tomate',
-      '¼ taza de Cilantro',
-      '1 Limón',
-      'Sal al gusto',
-    ],
-    steps: [
-      'Fríe el chorizo de pavo en un sartén con aceite y retíralo cuando esté dorado.',
-      'En el mismo sartén, saltea cebolla picada y chile serrano hasta que estén en su punto.',
-      'Agrega los frijoles bayos refritos a la mezcla de cebolla y chile, y mezcla bien.',
-      'Parte los bolillos a la mitad, retira el exceso de migajón y agrega frijoles, chorizo y queso manchego rallado.',
-      'Lleva a freidora de aire a 380 °F (193 °C) por 5 minutos.',
-      'Prepara el pico de gallo con tomate, cebolla, chile serrano, cilantro, limón y sal.',
-      'Saca los molletes y corona con el pico de gallo.',
-    ],
-  },
+  },*/
   {
     title: 'Huevo con Chicharrón en Salsa Roja',
     slug: generateSlug('Huevo con Chicharrón en Salsa Roja'),
@@ -5553,7 +5523,7 @@ export const recipes: Recipe[] = [
       'Agrega el elote, tapa 5 minutos más. Deja reposar 10 minutos antes de servir.',
     ],
   },
-  {
+  /*{
     title: 'Arroz Rojo',
     slug: generateSlug('Arroz Rojo'),
     category: 'Arroz',
@@ -5581,7 +5551,7 @@ export const recipes: Recipe[] = [
       'Cuando hierva, tapa y cocina a fuego bajo 15–20 minutos sin destapar.',
       'Deja reposar 5–10 minutos tapado antes de servir.',
     ],
-  },
+  },*/
 
   // ─────────────────────────────────────────
   // COMIDA AMERICANA
@@ -5784,7 +5754,7 @@ const recipeImageAliases: Record<string, string> = {
   polloalapina: 'PolloalaPina',
   jalapenochicken: 'JalapenoChicken',
   stirfrydepolloconjengibre: 'StirFrydePollo',
-  carneconbrocoliestiloriental: 'CarneconBrocoliEstiloOriental',
+  carneconbrocoliestilooriental: 'CarneconBrocoliEstiloOriental',
   guisadodecarneconpapas: 'GuisadodeCarneconPapa',
   cremadebrocoli: 'CremadeBrocoli',
   rollitosdebistecconverduras: 'RollitosdeBistecconVerdura',
@@ -5805,6 +5775,29 @@ const recipeImageAliases: Record<string, string> = {
   salmonalajoylimon: 'SalmonalAjoyLimon',
   salmonalajoymiel: 'SalmonalAjoyMiel',
   cebollitasenvinagre: 'CebollitasEncurtidas',
+  carlotadelimon: 'CarlotadeLimon',
+  dipdeatun: 'DipdeAtun',
+  champinonesalajillo: 'ChampinonesalAjillo',
+  esparragosconparmesano: 'EsparragosconParmesano',
+  pandeajo: 'PanalAjo',
+  papasalajoylimon: 'PapasalAjoyLimon',
+  quesocremaconarandanosynuez: 'QuesoCremaconArandanoyNuez',
+  tapasdejamonserranoconhigo: 'TapasdeJamonSerranoconHigo',
+  ensaladadeatunconmango: 'EnsaladadeAtunconMango',
+  ensaladadeatunconaguacate: 'EnsaladadeAtunconAguacate',
+  bacalaoparacenanavidena: 'BacalaoparaCenaNavidena',
+  tostadasdesalpicondeatun: 'TostadasdeSalpicondeAtun',
+  aguachileconmangoypina: 'AguachileconMangoyPina',
+  cortadillonorteno: 'CortadilloNorteno',
+  puredepapa: 'PuredePapa',
+  rellenoparapavonavideno: 'RellenoparaPavoNavideno',
+  tostadasdesalpiconderes: 'TostadasdeSalpicondeRes',
+  ensaladacesarconpasta: 'EnsaladaCesarconPasta',
+  sandwichdepolloconensaladacesar: 'SandwichdePolloconEnsaladaCesar',
+  sandwichdeensaladadepolloconchipotle: 'SandwichdeEnsaladadePolloconChipotle',
+  minicheesecakes: 'MiniCheesecake',
+  tortasenpanciabatta: 'TortasenPanCiabatta',
+  fajitaderesconpimientoybambu: 'FajitasdeResconPimientoyBambu',
 };
 
 export function formatImageName(title: string): string {
