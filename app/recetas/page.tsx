@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { recipes, categories, generateSlug } from '@/lib/recipes';
+import { recipes, categories, generateSlug, normalizeCategory } from '@/lib/recipes';
 import RecipeCard from '@/components/RecipeCard';
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export default async function RecetasPage({
   const { categoria } = await searchParams;
 
   const filtered = categoria
-    ? recipes.filter((r) => generateSlug(r.category) === categoria)
+    ? recipes.filter((r) => generateSlug(normalizeCategory(r.category)) === categoria)
     : recipes;
 
   const activeCategory = categoria

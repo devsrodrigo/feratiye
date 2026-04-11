@@ -1,22 +1,23 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { recipes, categories, generateSlug, getFeaturedRecipes } from '@/lib/recipes';
+import { recipes, categories, generateSlug, getFeaturedRecipes, normalizeCategory } from '@/lib/recipes';
 import { products } from '@/lib/products';
 import RecipeCard from '@/components/RecipeCard';
 import ProductCard from '@/components/ProductCard';
 
 const categoryIcons: Record<string, string> = {
-  Postres: '/foodicons/postres.png',
-  "Dips y Aderezos": '/foodicons/dips.png',
-  "Salsas y Acompañamientos": '/foodicons/salsas.png',
-  Drinks: '/foodicons/drinks.png',
   Desayunos: '/foodicons/desayunos.png',
-  Pastas: '/foodicons/pastas.png',
   Botanas: '/foodicons/botanas.png',
-  Pescado: '/foodicons/pescado.png',
-  "Comida Casera": '/foodicons/comidacasera.png',
-  "Comida China": '/foodicons/comidachina.png',
-  Arroz: '/foodicons/arroz.png',
+  'Salsas y Guarniciones': '/foodicons/salsas.png',
+  'Platos Fuertes': '/foodicons/comidaamericana.png',
+  Casera: '/foodicons/comidacasera.png',
+  'Cocina Italiana': '/foodicons/pastas.png',
+  'Cocina Asiática': '/foodicons/comidachina.png',
+  'Cocina Americana': '/foodicons/comidaamericana.png',
+  Mariscos: '/foodicons/pescado.png',
+  Saludable: '/foodicons/saludable.png',
+  Bebidas: '/foodicons/drinks.png',
+  Postres: '/foodicons/postres.png',
 };
 
 export default function HomePage() {
@@ -128,7 +129,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {categories.map((cat) => {
-              const count = recipes.filter((r) => r.category === cat).length;
+              const count = recipes.filter((r) => normalizeCategory(r.category) === cat).length;
               return (
                 <Link
                   key={cat}

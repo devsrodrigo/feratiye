@@ -1,22 +1,34 @@
 export type Category =
-  | 'Postres'
+  | 'Desayunos'
+  | 'Botanas'
+  | 'Salsas y Guarniciones'
+  | 'Platos Fuertes'
+  | 'Casera'
+  | 'Cocina Italiana'
+  | 'Cocina Asiática'
+  | 'Cocina Americana'
+  | 'Mariscos'
+  | 'Saludable'
+  | 'Bebidas'
+  | 'Postres';
+
+export type LegacyCategory =
   | 'Dips y Aderezos'
   | 'Salsas y Acompañamientos'
   | 'Drinks'
-  | 'Desayunos'
   | 'Pastas'
-  | 'Botanas'
   | 'Pescado'
   | 'Comida Casera'
   | 'Comida Asiática'
   | 'Comida Americana'
-  | 'Saludable'
   | 'Arroz';
+
+export type RecipeCategory = Category | LegacyCategory;
 
 export interface Recipe {
   title: string;
   slug: string;
-  category: Category;
+  category: RecipeCategory;
   description: string;
   image: string;
   tiktokUrl: string;
@@ -36,20 +48,39 @@ export function generateSlug(text: string): string {
 }
 
 export const categories: Category[] = [
-  'Postres',
-  'Dips y Aderezos',
-  'Salsas y Acompañamientos',
-  'Drinks',
   'Desayunos',
-  'Pastas',
   'Botanas',
-  'Pescado',
-  'Comida Casera',
-  'Comida Asiática',
-  'Comida Americana',
+  'Salsas y Guarniciones',
+  'Platos Fuertes',
+  'Casera',
+  'Cocina Italiana',
+  'Cocina Asiática',
+  'Cocina Americana',
+  'Mariscos',
   'Saludable',
-  'Arroz',
+  'Bebidas',
+  'Postres',
 ];
+
+const categoryMigration: Record<LegacyCategory, Category> = {
+  'Dips y Aderezos': 'Salsas y Guarniciones',
+  'Salsas y Acompañamientos': 'Salsas y Guarniciones',
+  Arroz: 'Salsas y Guarniciones',
+  Pescado: 'Mariscos',
+  Drinks: 'Bebidas',
+  'Comida Asiática': 'Cocina Asiática',
+  'Comida Americana': 'Cocina Americana',
+  'Comida Casera': 'Casera',
+  Pastas: 'Cocina Italiana',
+};
+
+export function normalizeCategory(category: string): Category {
+  if (categories.includes(category as Category)) {
+    return category as Category;
+  }
+
+  return categoryMigration[category as LegacyCategory] ?? 'Casera';
+}
 
 export const recipes: Recipe[] = [
   // ─────────────────────────────────────────
@@ -5738,7 +5769,7 @@ export function getRecipeBySlug(slug: string): Recipe | undefined {
 }
 
 export function getRecipesByCategory(category: Category): Recipe[] {
-  return recipes.filter((r) => r.category === category);
+  return recipes.filter((r) => normalizeCategory(r.category) === category);
 }
 
 const recipeImageAliases: Record<string, string> = {

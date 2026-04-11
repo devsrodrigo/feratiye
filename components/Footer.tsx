@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { categories, generateSlug } from '@/lib/recipes';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -62,46 +63,16 @@ export default function Footer() {
               Categorías
             </p>
             <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/recetas?categoria=comida-casera"
-                  className="text-white/70 hover:text-blush transition-colors text-sm"
-                >
-                  Comida Casera
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/recetas?categoria=comida-china"
-                  className="text-white/70 hover:text-blush transition-colors text-sm"
-                >
-                  Comida China
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/recetas?categoria=pastas"
-                  className="text-white/70 hover:text-blush transition-colors text-sm"
-                >
-                  Pastas
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/recetas?categoria=postres"
-                  className="text-white/70 hover:text-blush transition-colors text-sm"
-                >
-                  Postres
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/recetas?categoria=botanas"
-                  className="text-white/70 hover:text-blush transition-colors text-sm"
-                >
-                  Botanas
-                </Link>
-              </li>
+              {categories.map((cat) => (
+                <li key={cat}>
+                  <Link
+                    href={`/recetas?categoria=${generateSlug(cat)}`}
+                    className="text-white/70 hover:text-blush transition-colors text-sm"
+                  >
+                    {cat}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { formatImageName, generateSlug, type Recipe } from '@/lib/recipes';
+import { formatImageName, generateSlug, normalizeCategory, type Recipe } from '@/lib/recipes';
 import RecipeImage from './RecipeImage';
 
 export default function RecipeCard({ recipe }: { recipe: Recipe }) {
@@ -23,7 +23,7 @@ export default function RecipeCard({ recipe }: { recipe: Recipe }) {
         {/* Category Badge */}
         <div className="absolute top-3 left-3">
           <span className="inline-block bg-white/90 backdrop-blur-sm text-dark px-3 py-1 text-[10px] uppercase tracking-widest rounded-sm">
-            {recipe.category}
+            {normalizeCategory(recipe.category)}
           </span>
         </div>
       </div>

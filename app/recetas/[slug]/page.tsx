@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { recipes, getRecipeBySlug, generateSlug, formatImageName } from '@/lib/recipes';
+import { recipes, getRecipeBySlug, generateSlug, normalizeCategory, formatImageName } from '@/lib/recipes';
 import RecipeImage from '@/components/RecipeImage';
 import RecipeCard from '@/components/RecipeCard';
 
@@ -52,7 +52,7 @@ export default async function RecipeDetailPage({
   // Get related recipes from same category (excluding current)
   const related = recipes
     .filter(
-      (r) => r.category === recipe.category && generateSlug(r.title) !== slug
+      (r) => normalizeCategory(r.category) === normalizeCategory(recipe.category) && generateSlug(r.title) !== slug
     )
     .slice(0, 3);
 
@@ -92,7 +92,7 @@ export default async function RecipeDetailPage({
             <div className="absolute bottom-0 left-0 right-0 p-5 md:p-8 lg:p-10">
               <div className="max-w-3xl">
                 <span className="inline-block bg-primary text-white px-3 py-1 text-[10px] uppercase tracking-widest rounded-sm mb-4">
-                  {recipe.category}
+                  {normalizeCategory(recipe.category)}
                 </span>
                 <h1 className="text-2xl md:text-4xl lg:text-5xl text-white leading-tight">
                   {recipe.title}
@@ -191,7 +191,7 @@ export default async function RecipeDetailPage({
         <section className="py-16 lg:py-24 bg-cream px-6">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <p className="section-label mb-3">Más de {recipe.category}</p>
+              <p className="section-label mb-3">Más de {normalizeCategory(recipe.category)}</p>
               <h2 className="text-2xl md:text-3xl">Recetas Relacionadas</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
