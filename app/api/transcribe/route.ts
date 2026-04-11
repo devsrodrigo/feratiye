@@ -1,3 +1,5 @@
+
+export const dynamic = 'force-dynamic';
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import fs from 'fs';
@@ -8,9 +10,16 @@ import { promisify } from 'util';
 
 const execFileAsync = promisify(execFile);
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+export const dynamic = 'force-dynamic'; // Keep this!
+
+export async function POST(req) {
+  // ✅ INITIALIZE INSIDE THE FUNCTION
+  const openai = new OpenAI({ 
+    apiKey: process.env.OPENAI_API_KEY 
+  });
+
+  // ... rest of your code
+}
 
 function isValidHttpUrl(value: string): boolean {
   try {
