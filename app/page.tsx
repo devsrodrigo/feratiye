@@ -7,15 +7,15 @@ import ProductCard from '@/components/ProductCard';
 
 const categoryIcons: Record<string, string> = {
   Postres: '/foodicons/postres.png',
-  Dips y Aderezos: '/foodicons/dips.png',
-  Salsas y Acompañamientos: '/foodicons/salsas.png',
+  "Dips y Aderezos": '/foodicons/dips.png',
+  "Salsas y Acompañamientos": '/foodicons/salsas.png',
   Drinks: '/foodicons/drinks.png',
   Desayunos: '/foodicons/desayunos.png',
   Pastas: '/foodicons/pastas.png',
   Botanas: '/foodicons/botanas.png',
   Pescado: '/foodicons/pescado.png',
-  Comida Casera: '/foodicons/comidacasera.png',
-  Comida China: '/foodicons/comidachina.png',
+  "Comida Casera": '/foodicons/comidacasera.png',
+  "Comida China": '/foodicons/comidachina.png',
   Arroz: '/foodicons/arroz.png',
 };
 
