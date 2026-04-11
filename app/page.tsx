@@ -9,7 +9,7 @@ const categoryIcons: Record<string, string> = {
   Desayunos: '/foodicons/desayunos.png',
   Botanas: '/foodicons/botanas.png',
   'Salsas y Guarniciones': '/foodicons/salsas.png',
-  'Platos Fuertes': '/foodicons/comidaamericana.png',
+  Arroz: '/foodicons/arroz.png',
   Casera: '/foodicons/comidacasera.png',
   'Cocina Italiana': '/foodicons/pastas.png',
   'Cocina Asiática': '/foodicons/comidachina.png',

@@ -2,7 +2,7 @@ export type Category =
   | 'Desayunos'
   | 'Botanas'
   | 'Salsas y Guarniciones'
-  | 'Platos Fuertes'
+  | 'Arroz'
   | 'Casera'
   | 'Cocina Italiana'
   | 'Cocina Asiática'
@@ -51,7 +51,7 @@ export const categories: Category[] = [
   'Desayunos',
   'Botanas',
   'Salsas y Guarniciones',
-  'Platos Fuertes',
+  'Arroz',
   'Casera',
   'Cocina Italiana',
   'Cocina Asiática',
@@ -65,7 +65,7 @@ export const categories: Category[] = [
 const categoryMigration: Record<LegacyCategory, Category> = {
   'Dips y Aderezos': 'Salsas y Guarniciones',
   'Salsas y Acompañamientos': 'Salsas y Guarniciones',
-  Arroz: 'Salsas y Guarniciones',
+  Arroz: 'Arroz',
   Pescado: 'Mariscos',
   Drinks: 'Bebidas',
   'Comida Asiática': 'Cocina Asiática',
