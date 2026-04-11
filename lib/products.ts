@@ -29,13 +29,13 @@ export const products: Product[] = [
     price: '$89',
   },
   {
-    id: 'matcha',
-    slug: 'matcha',
-    name: 'Salsa Matcha Estilo Fusión',
+    id: 'macha',
+    slug: 'macha',
+    name: 'Salsa Macha Estilo Fusión',
     description:
-      'Una salsa innovadora que fusiona el umami del matcha con chiles mexicanos. Perfecta para sushi, poke bowls y más.',
+      'Una salsa innovadora que fusiona el umami del Macha con chiles mexicanos. Perfecta para sushi, poke bowls y más.',
     longDescription:
-      'La Salsa Matcha Estilo Fusión nace de la pasión por experimentar con sabores de diferentes culturas. Combinamos matcha ceremonial japonés con chiles guajillo y chipotle mexicanos, aceite de ajonjolí, salsa de soya y un toque de miel de abeja. El resultado es una salsa única que va perfecto con sushi, poke bowls, tacos de pescado o incluso como dip para tempura. Una aventura de sabor en cada gota.',
+      'La Salsa Macha Estilo Fusión nace de la pasión por experimentar con sabores de diferentes culturas. Combinamos Macha ceremonial japonés con chiles guajillo y chipotle mexicanos, aceite de ajonjolí, salsa de soya y un toque de miel de abeja. El resultado es una salsa única que va perfecto con sushi, poke bowls, tacos de pescado o incluso como dip para tempura. Una aventura de sabor en cada gota.',
     price: '$129',
   },
   {
@@ -58,7 +58,7 @@ export function formatProductImage(slug: string): string {
   const productImages: Record<string, string> = {
     alioli: '/images/products/Artisanaliolijarcloseup.png',
     chile: '/images/products/ChiledeArbolenPolvoPremium.png',
-    matcha: '/images/products/SalsaMatchaEstiloFusionjar.png',
+    macha: '/images/products/SalsaMachaEstiloFusionjar.png',
     ajo_perejil: '/images/products/Garlicandparsleyseasoningjar.png',
   };
 

@@ -5,7 +5,7 @@ import ProductCard from '@/components/ProductCard';
 export const metadata: Metadata = {
   title: 'Productos — Fernando Atiye',
   description:
-    'Productos artesanales de Fernando Atiye. Alioli, chile de árbol, salsa matcha y más. Hechos con pasión.',
+    'Productos artesanales de Fernando Atiye. Alioli, chile de árbol, salsa macha y más. Hechos con pasión.',
 };
 
 export default function ProductosPage() {

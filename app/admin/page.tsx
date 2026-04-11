@@ -15,7 +15,7 @@ interface ClickData {
 const productNames: Record<string, string> = {
   alioli: 'Alioli Artesanal',
   chile: 'Chile de Árbol en Polvo Premium',
-  matcha: 'Salsa Matcha Estilo Fusión',
+  macha: 'Salsa Macha Estilo Fusión',
   ajo_perejil: 'Sazonador Ajo con Perejil',
 };
 

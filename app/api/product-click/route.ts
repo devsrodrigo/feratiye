@@ -19,7 +19,7 @@ function readData(): Record<string, ClickData> {
     return {
       alioli: { clicks: 0, lastClick: null },
       chile: { clicks: 0, lastClick: null },
-      matcha: { clicks: 0, lastClick: null },
+      macha: { clicks: 0, lastClick: null },
       ajo_perejil: { clicks: 0, lastClick: null },
     };
   }
