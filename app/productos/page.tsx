@@ -16,7 +16,7 @@ export default function ProductosPage() {
         <div className="max-w-4xl mx-auto text-center">
           <p className="section-label mb-4">Hecho a mano</p>
           <h1 className="font-breathing text-4xl md:text-5xl lg:text-6xl mb-4">
-            Productos Artesanales
+            Productos
           </h1>
           <div className="editorial-rule" />
           <p className="text-dark/60 mt-6 max-w-lg mx-auto">

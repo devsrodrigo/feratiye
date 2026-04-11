@@ -75,7 +75,7 @@ export default function HistoriaPage() {
           <div className="my-16 grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="relative aspect-[4/5] rounded-xl overflow-hidden bg-cream">
               <Image
-                src="/images/feratiye1.JPG"
+                src="/images/feratiye1.jpeg"
                 alt="Fernando Atiye — momentos en la cocina"
                 fill
                 sizes="(max-width: 640px) 100vw, 33vw"
@@ -84,7 +84,7 @@ export default function HistoriaPage() {
             </div>
             <div className="relative aspect-[4/5] rounded-xl overflow-hidden bg-cream">
               <Image
-                src="/images/feratiye2.JPG"
+                src="/images/feratiye2.jpeg"
                 alt="Fernando Atiye — preparando una receta"
                 fill
                 sizes="(max-width: 640px) 100vw, 33vw"
@@ -93,7 +93,7 @@ export default function HistoriaPage() {
             </div>
             <div className="relative aspect-[4/5] rounded-xl overflow-hidden bg-cream">
               <Image
-                src="/images/feratiye3.JPG"
+                src="/images/feratiye3.jpeg"
                 alt="Fernando Atiye — ingredientes y platillos"
                 fill
                 sizes="(max-width: 640px) 100vw, 33vw"
