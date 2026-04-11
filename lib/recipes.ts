@@ -5757,10 +5757,8 @@ export const recipes: Recipe[] = [
   },
 ];
 
-export const visibleRecipes: Recipe[] = recipes.filter((recipe) => Boolean(recipe.image?.trim()));
-
 export function getFeaturedRecipes(): Recipe[] {
-  const featured = visibleRecipes.filter((r) => r.featured);
+  const featured = recipes.filter((r) => r.featured);
   // Return up to 6 featured recipes
   return featured.slice(0, 6);
 }
@@ -5771,10 +5769,6 @@ export function getRecipeBySlug(slug: string): Recipe | undefined {
 
 export function getRecipesByCategory(category: Category): Recipe[] {
   return recipes.filter((r) => normalizeCategory(r.category) === category);
-}
-
-export function getVisibleRecipesByCategory(category: Category): Recipe[] {
-  return visibleRecipes.filter((r) => normalizeCategory(r.category) === category);
 }
 
 const recipeImageAliases: Record<string, string> = {

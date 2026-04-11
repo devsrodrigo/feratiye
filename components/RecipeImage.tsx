@@ -33,11 +33,12 @@ export default function RecipeImage({
   }
 
   return (
+    // eslint-disable-next-line @next/next/no-img-element
     <img
       src={src}
       alt={alt}
       onError={() => setHasError(true)}
-      className={`object-cover ${fill ? 'absolute inset-0 w-full h-full' : 'w-full h-full'} ${className}`}
+      className={`object-cover object-center ${fill ? 'absolute inset-0 w-full h-full' : 'w-full h-full'} ${className}`}
     />
   );
 }
