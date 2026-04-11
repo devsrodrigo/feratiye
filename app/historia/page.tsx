@@ -31,7 +31,6 @@ export default function HistoriaPage() {
         <div className="max-w-3xl mx-auto">
           {/* Chapter 1: Origen */}
           <div className="mb-20">
-            <p className="section-label mb-4">Capítulo 01</p>
             <h2 className="text-3xl md:text-4xl mb-8">El Origen</h2>
             <div className="editorial-rule !mx-0 !mb-8" />
 
@@ -41,32 +40,22 @@ export default function HistoriaPage() {
                 la pandemia se convertiría en una de las pasiones más grandes de mi vida.
               </p>
               <p>
-                En aquel entonces, lancé un pequeño emprendimiento llamado <strong className="text-dark">Quesos Santa Fe</strong>, 
-                y para darlo a conocer, empecé a subir recetas a redes sociales usándolos como 
-                ingrediente principal. Aunque con el tiempo tuve que dejar el negocio, descubrí 
-                dos cosas que ya no estaba dispuesto a soltar: la cocina… y la creación de contenido.
+                En aquel entonces, lancé un emprendimiento llamado <strong className="text-dark">Quesos Santa Fe</strong>, y para darlo a conocer, empecé a subir recetas a redes sociales usando los productos del negocio como ingrediente principal. Aunque con el tiempo tuve que dejar el negocio para continuar con mis estudios, descubrí dos cosas que ya no estaba dispuesto a soltar: la cocina… y la creación de contenido.
               </p>
             </div>
           </div>
 
           {/* Chapter 2: Legado */}
           <div className="mb-20">
-            <p className="section-label mb-4">Capítulo 02</p>
             <h2 className="text-3xl md:text-4xl mb-8">El Legado</h2>
             <div className="editorial-rule !mx-0 !mb-8" />
 
             <div className="space-y-6 text-dark/75 text-base md:text-lg leading-relaxed">
               <p>
-                La cocina ha sido parte de mí desde siempre. Mi abuelo, aunque falleció cuando 
-                yo tenía apenas seis años, dejó un legado muy grande. Era un verdadero maestro 
-                en la cocina: tenía muchas recetas, le encantaba consentirnos y cada platillo 
-                que preparaba estaba lleno de cariño.
+                La cocina ha sido parte de mí desde siempre. Mi abuelo, aunque falleció cuando yo tenía apenas seis años, dejó un legado muy grande. Era un verdadero maestro en la cocina: tenía muchas recetas, le encantaba consentirnos y cada platillo que preparaba dejaba sin palabras a todos sus familiares y amigos.
               </p>
               <p>
-                A pesar del tiempo, sigo replicando algunas de sus recetas y, en cada una, hay 
-                un pedacito de su historia. Este proyecto, además, me ha acercado mucho más a mi 
-                familia; cada cocinada se vuelve una excusa perfecta para reunirnos, reírnos y 
-                disfrutar.
+                A pesar del tiempo, sigo replicando algunas de sus recetas y, en cada una, hay un pedacito de su historia. Este proyecto, además, me ha acercado mucho más a mi familia; cada cocinada se vuelve una excusa perfecta para reunirnos, reírnos y disfrutar.
               </p>
             </div>
           </div>
@@ -115,39 +104,30 @@ export default function HistoriaPage() {
 
           {/* Chapter 3: Evolución */}
           <div className="mb-20">
-            <p className="section-label mb-4">Capítulo 03</p>
             <h2 className="text-3xl md:text-4xl mb-8">La Evolución</h2>
             <div className="editorial-rule !mx-0 !mb-8" />
 
             <div className="space-y-6 text-dark/75 text-base md:text-lg leading-relaxed">
               <p>
-                Después de más de cuatro años compartiendo recetas en redes sociales, y con el 
-                increíble apoyo de la comunidad que se ha formado en torno a mi contenido — más de 
-                1,000,000 personas en mis redes sociales y millones de reproducciones — decidí crear este recetario.
+                Después de más de cinco años compartiendo recetas en redes sociales, y con el increíble apoyo de la comunidad que se ha formado en torno a mi contenido — más de 850,000 personas en mis redes sociales y millones de reproducciones — decidí crear esta página.
               </p>
               <p>
-                Mi intención es que tengas acceso rápido, claro y directo a todas esas recetas 
-                caseras que han sido parte de mi camino, junto con mis mejores tips, combinaciones 
-                favoritas, y uno que otro consejo que he ido aprendiendo en el proceso.
+                Mi intención es que aquí cuenten con un acceso rápido, claro y directo a todas las recetas que han sido parte de mi camino, junto con los tips y aprendizajes que he ido sumando a lo largo de este proceso. En esta página podrán explorar cada receta con el detalle de sus ingredientes, un procedimiento práctico que los guiará paso a paso y un video tutorial mío que los acompañará en todo el proceso.
               </p>
             </div>
           </div>
 
           {/* Chapter 4: Filosofía */}
           <div className="mb-20">
-            <p className="section-label mb-4">Capítulo 04</p>
             <h2 className="text-3xl md:text-4xl mb-8">La Filosofía</h2>
             <div className="editorial-rule !mx-0 !mb-8" />
 
             <div className="space-y-6 text-dark/75 text-base md:text-lg leading-relaxed">
               <p>
-                Aquí vas a encontrar recetas fáciles, sabrosas y prácticas, hechas con ingredientes 
-                que seguramente ya tienes en casa. No necesitas ser chef ni tener experiencia previa 
-                para disfrutar de estas recetas.
+                Las recetas que encontrarás aquí son fáciles, deliciosas y prácticas, hechas con ingredientes que muy probablemente ya tienes en casa. Están pensadas tanto para quienes están dando sus primeros pasos en la cocina, como para quienes ya disfrutan cocinar y quieren seguir aprendiendo y explorando.
               </p>
               <p>
-                Están pensadas tanto para quienes están dando sus primeros pasos en la cocina, como 
-                para quienes ya disfrutan cocinar y quieren seguir aprendiendo y explorando.
+                No necesitas ser experto ni tener experiencia previa en la cocina para prepararlas y disfrutarlas. Porque como siempre les digo:
               </p>
               <p className="text-dark font-medium text-xl md:text-2xl">
                 Cocinar rico no tiene por qué ser complicado.
@@ -157,20 +137,15 @@ export default function HistoriaPage() {
 
           {/* Chapter 5: Visión */}
           <div className="mb-20">
-            <p className="section-label mb-4">Capítulo 05</p>
             <h2 className="text-3xl md:text-4xl mb-8">Visión Futura</h2>
             <div className="editorial-rule !mx-0 !mb-8" />
 
             <div className="space-y-6 text-dark/75 text-base md:text-lg leading-relaxed">
               <p>
-                Este recetario es solo el comienzo. Mi sueño es seguir creciendo esta comunidad, 
-                crear una línea de productos artesanales que lleven mi esencia a tu cocina, 
-                y algún día poder compartir todo esto también a través de experiencias presenciales, 
-                eventos y colaboraciones que acerquen a las personas a través de la comida.
+                Esta página es solo el comienzo de un proyecto que seguirá creciendo y evolucionando. Mi sueño seguir creciendo esta comunidad que tanto aprecio y, con el tiempo, llevar esto más allá de la pantalla: crear productos, experiencias y espacios que conecten a las personas a través de la comida, y que todo lo que hoy ves aquí pueda formar parte de tu día a día de una forma aún más cercana.
               </p>
               <p>
-                Porque al final, la cocina no se trata solo de ingredientes y técnicas — se trata 
-                de personas, de momentos, de historias compartidas alrededor de una mesa.
+                Porque al final, la cocina no se trata solo de recetas, sino de todo lo que sucede alrededor de ellas: los momentos, las personas y lo que se comparte en cada mesa.
               </p>
             </div>
           </div>
@@ -181,13 +156,13 @@ export default function HistoriaPage() {
               Gracias por estar aquí.
             </p>
             <p className="text-dark/60 text-base md:text-lg leading-relaxed mb-8">
-              Con mucho cariño, espero que lo disfruten mucho.
+              Con mucho cariño, espero que la disfruten mucho.
               <br />
-              Y sin más, comencemos…
+              Y sin más, comencemos a cocinar…
             </p>
             <p className="text-3xl md:text-4xl text-primary">¡Venga!</p>
             <p className="mt-4 text-dark/40 text-sm uppercase tracking-widest">
-              Fernando Atiye
+              FERNANDO ATIYE
             </p>
           </div>
         </div>
