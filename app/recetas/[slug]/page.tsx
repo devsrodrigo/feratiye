@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
-import { recipes, getRecipeBySlug, generateSlug, normalizeCategory, formatImageName } from '@/lib/recipes';
+import { visibleRecipes, getRecipeBySlug, generateSlug, normalizeCategory, formatImageName } from '@/lib/recipes';
 import RecipeImage from '@/components/RecipeImage';
 import RecipeCard from '@/components/RecipeCard';
 
 export async function generateStaticParams() {
-  return recipes.map((recipe) => ({
+  return visibleRecipes.map((recipe) => ({
     slug: generateSlug(recipe.title),
   }));
 }
@@ -47,10 +47,10 @@ export default async function RecipeDetailPage({
     notFound();
   }
 
-  const imageSrc = formatImageName(recipe.title);
+  const imageSrc = recipe.image || formatImageName(recipe.title);
 
   // Get related recipes from same category (excluding current)
-  const related = recipes
+  const related = visibleRecipes
     .filter(
       (r) => normalizeCategory(r.category) === normalizeCategory(recipe.category) && generateSlug(r.title) !== slug
     )

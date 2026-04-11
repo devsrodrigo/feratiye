@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { recipes, categories, generateSlug, getFeaturedRecipes, normalizeCategory } from '@/lib/recipes';
+import { visibleRecipes, categories, generateSlug, getFeaturedRecipes, normalizeCategory } from '@/lib/recipes';
 import { products } from '@/lib/products';
 import RecipeCard from '@/components/RecipeCard';
 import ProductCard from '@/components/ProductCard';
@@ -129,7 +129,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {categories.map((cat) => {
-              const count = recipes.filter((r) => normalizeCategory(r.category) === cat).length;
+              const count = visibleRecipes.filter((r) => normalizeCategory(r.category) === cat).length;
               return (
                 <Link
                   key={cat}

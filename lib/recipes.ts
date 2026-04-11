@@ -476,7 +476,7 @@ export const recipes: Recipe[] = [
       'Sirve con totopos o galletas saladas.',
     ],
   },
-  {
+  /*{
     title: 'Aderezo Ranch',
     slug: generateSlug('Aderezo Ranch'),
     category: 'Dips y Aderezos',
@@ -521,7 +521,7 @@ export const recipes: Recipe[] = [
       'Prueba y ajusta el sazón si es necesario.',
       'Refrigera hasta que esté listo para servir.',
     ],
-  },
+  },*/
 
   // ─────────────────────────────────────────
   // SALSAS Y ACOMPAÑAMIENTOS
@@ -600,7 +600,7 @@ export const recipes: Recipe[] = [
       'Espera unos minutos hasta que el vinagre se reduzca.',
     ],
   },
-  {
+  /*{
     title: 'Salsa Macha',
     slug: generateSlug('Salsa Macha'),
     category: 'Salsas y Acompañamientos',
@@ -625,7 +625,7 @@ export const recipes: Recipe[] = [
       'Lleva estos ingredientes también a la licuadora junto con todos los demás.',
       'Agrega sal y pimienta y licúa todo hasta obtener una mezcla homogénea.',
     ],
-  },
+  },*/
   {
     title: 'Salsa de Jalapeño con Cilantro',
     slug: generateSlug('Salsa de Jalapeño con Cilantro'),
@@ -5757,8 +5757,10 @@ export const recipes: Recipe[] = [
   },
 ];
 
+export const visibleRecipes: Recipe[] = recipes.filter((recipe) => Boolean(recipe.image?.trim()));
+
 export function getFeaturedRecipes(): Recipe[] {
-  const featured = recipes.filter((r) => r.featured);
+  const featured = visibleRecipes.filter((r) => r.featured);
   // Return up to 6 featured recipes
   return featured.slice(0, 6);
 }
@@ -5769,6 +5771,10 @@ export function getRecipeBySlug(slug: string): Recipe | undefined {
 
 export function getRecipesByCategory(category: Category): Recipe[] {
   return recipes.filter((r) => normalizeCategory(r.category) === category);
+}
+
+export function getVisibleRecipesByCategory(category: Category): Recipe[] {
+  return visibleRecipes.filter((r) => normalizeCategory(r.category) === category);
 }
 
 const recipeImageAliases: Record<string, string> = {

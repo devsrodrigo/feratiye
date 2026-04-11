@@ -4,7 +4,7 @@ import RecipeImage from './RecipeImage';
 
 export default function RecipeCard({ recipe }: { recipe: Recipe }) {
   const slug = generateSlug(recipe.title);
-  const imageSrc = formatImageName(recipe.title);
+  const imageSrc = recipe.image || formatImageName(recipe.title);
 
   return (
     <Link
