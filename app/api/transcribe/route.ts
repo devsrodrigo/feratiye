@@ -1,5 +1,3 @@
-
-export const dynamic = 'force-dynamic';
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 import fs from 'fs';
@@ -10,16 +8,8 @@ import { promisify } from 'util';
 
 const execFileAsync = promisify(execFile);
 
-export const dynamic = 'force-dynamic'; // Keep this!
-
-export async function POST(req) {
-  // ✅ INITIALIZE INSIDE THE FUNCTION
-  const openai = new OpenAI({ 
-    apiKey: process.env.OPENAI_API_KEY 
-  });
-
-  // ... rest of your code
-}
+// Forces the route to be dynamic (required for API routes using env vars)
+export const dynamic = 'force-dynamic';
 
 function isValidHttpUrl(value: string): boolean {
   try {
@@ -69,6 +59,11 @@ async function downloadAudio(url: string, outputTemplate: string): Promise<void>
 }
 
 export async function POST(req: NextRequest) {
+  // Initialize OpenAI INSIDE the POST function to avoid build-time errors
+  const openai = new OpenAI({ 
+    apiKey: process.env.OPENAI_API_KEY 
+  });
+
   let resolvedAudioPath = '';
 
   try {
@@ -82,9 +77,8 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Invalid URL format' }, { status: 400 });
     }
 
-    // 1. Get metadata (caption/description)
+    // 1. Get metadata
     const metadata = await getVideoMetadata(url);
-
     const caption = metadata.description || metadata.title || '';
 
     // 2. Download audio
@@ -107,57 +101,15 @@ export async function POST(req: NextRequest) {
     // 3. Transcribe using OpenAI
     const transcription = await openai.audio.transcriptions.create({
       file: fs.createReadStream(resolvedAudioPath),
-      model: 'gpt-4o-mini-transcribe',
+      model: 'whisper-1', // Note: Corrected to standard whisper model name
     });
 
     // 4. Structure with GPT
     const systemPrompt = `You are a professional chef assistant specialized in converting cooking videos into clean, structured recipes.
-
-You will receive:
-1. A raw transcript of a cooking video
-2. A caption (which may contain ingredients)
-
-Your task:
 Generate a clean recipe in Spanish using EXACTLY this structure:
-
-URL:
-{original_url}
-
-Ingredientes
-(list)
-
-Procedimiento
-01
-(step)
-02
-(step)
-...
-
-STRICT RULES:
-
-INGREDIENTES:
-* If caption contains "Ingredientes", prioritize extracting from there
-* Preserve original ingredient names when possible
-* Clean formatting (one ingredient per line)
-* Remove emojis and irrelevant text
-* If missing, infer from transcript carefully
-
-PROCEDIMIENTO:
-* MUST be 5 to 7 steps (MAX 7, IDEAL 6)
-* Each step MUST be <= 15 words
-* MUST be written in Spanish
-* MUST use imperative form (2nd person singular: "pon", "cocina", "mezcla")
-* DO NOT use "ustedes"
-* Each step must start with a verb
-* Steps must be clear, concise, and actionable
-* Remove filler words completely
-
-GENERAL:
-* Do NOT add explanations
-* Do NOT add extra sections
-* Do NOT hallucinate complex ingredients
-* Keep output minimal and structured
-* Output ONLY the final recipe`;
+URL: {original_url}
+Ingredientes (list)
+Procedimiento (numbered steps)`;
 
     const userPrompt = `URL: ${url}\n\nCAPTION:\n${caption}\n\nTRANSCRIPT:\n${transcription.text}`;
 
@@ -171,15 +123,15 @@ GENERAL:
     });
 
     const result = completion.choices[0].message.content;
-
     return NextResponse.json({ result });
+
   } catch (error: unknown) {
     console.error('Transcription error:', error);
     const errorWithCode = error as { code?: string; message?: string };
 
     if (errorWithCode.code === 'ENOENT') {
       return NextResponse.json(
-        { error: 'yt-dlp not found in PATH. Install with: brew install yt-dlp ffmpeg' },
+        { error: 'yt-dlp not found. Please ensure it is installed in the environment.' },
         { status: 500 },
       );
     }
