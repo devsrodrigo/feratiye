@@ -607,7 +607,6 @@ export const recipes: Recipe[] = [
     description: 'Intensa, aceitosa y llena de textura. Esta salsa macha con cacahuates y ajonjolí es adictiva en todo lo que toques.',
     image: '',
     tiktokUrl: 'https://vm.tiktok.com/ZMrL9txMX/',
-    featured: true,
     ingredients: [
       '¾ taza de Aceite Vegetal',
       '1½ taza de Chile de Árbol',
@@ -753,7 +752,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Chiles en Vinagre con Zanahorias'),
     category: 'Salsas y Acompañamientos',
     description: 'Clásicos chiles jalapeños en vinagre con zanahoria y cebolla. El acompañamiento que no puede faltar en la mesa.',
-    image: '',
+    image: '/images/recipes/ChilesenVinagreconZanahorias.jpeg',
     tiktokUrl: 'https://www.youtube.com/watch?v=sNQGNyJWW5w&t=13s',
     ingredients: [
       '8 Chiles Jalapeños',
@@ -781,7 +780,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Ensalada de Col'),
     category: 'Salsas y Acompañamientos',
     description: 'Una ensalada de repollo fresca y cremosa. El acompañamiento perfecto para tacos de pescado, burritos y más.',
-    image: '',
+    image: '/images/recipes/EnsaladadeCol.png',
     tiktokUrl: '',
     ingredients: [
       '⅓ Col Morada',
@@ -839,7 +838,6 @@ export const recipes: Recipe[] = [
     description: 'Un coctel cremoso y reconfortante con ron, granadina y leche evaporada. Suave como su nombre.',
     image: '',
     tiktokUrl: 'https://vm.tiktok.com/ZMM9HRxEy/',
-    featured: true,
     ingredients: [
       '1½ tazas de Hielo',
       '¼ taza de Ron Blanco',
@@ -910,6 +908,7 @@ export const recipes: Recipe[] = [
     description: 'Hotcakes esponjosos de harina de avena y plátano licuado, sin azúcar añadida. Perfectos con fresas, moras azules y miel de abeja.',
     image: '',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7599416547144174869',
+    featured: true,
     ingredients: [
       '2 Huevos',
       '½ taza de Leche',
@@ -1219,6 +1218,7 @@ export const recipes: Recipe[] = [
     description: 'Fusilli en salsa cremosa de chorizo, tomates secos y espinaca al estilo toscano. Un plato robusto y lleno de sabor para el fin de semana.',
     image: '',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7498576545833929992',
+    featured: true,
     ingredients: [
       '200 g de Pasta Fusilli',
       '150 g de Chorizo italiano o español',
@@ -1276,7 +1276,6 @@ export const recipes: Recipe[] = [
     description: 'Espagueti en salsa cremosa de chile poblano con elote. Una pasta con sabor mexicano que te sorprenderá.',
     image: '',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7105158188403674373',
-    featured: true,
     ingredients: [
       '200 g de Espagueti',
       '3 Chiles Poblanos',
@@ -1974,6 +1973,7 @@ export const recipes: Recipe[] = [
     description: 'Floretes de coliflor cubiertos en maicena, pan molido y especias, cocinados en freidora de aire hasta quedar crujientes y ligeramente picosos.',
     image: '',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7564658100360219922',
+    featured: true,
     ingredients: [
       '½ Coliflor',
       '2 cdas. de Maicena',
@@ -2035,6 +2035,7 @@ export const recipes: Recipe[] = [
     description: 'Queso manchego, chihuahua y crema fundidos con chorizo de cerdo, jalapeño, serrano y ajo. Servido con totopos de maíz.',
     image: '',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7555722273068502280',
+    featured: true,
     ingredients: [
       '200 g de Queso Manchego rallado',
       '200 g de Queso Chihuahua rallado',
@@ -2247,7 +2248,6 @@ export const recipes: Recipe[] = [
     description: 'Salchichas doradas en salsa chipotle espesa. La botana perfecta para ver el partido o matar el antojo.',
     image: '',
     tiktokUrl: 'https://vm.tiktok.com/ZMMcDRMfS/',
-    featured: true,
     ingredients: [
       '3 Tomates',
       '4 Salchichas',
@@ -2301,6 +2301,7 @@ export const recipes: Recipe[] = [
     description: 'Tostadas con atún marinado en soya, limón y naranja, pepino, cebolla morada y cebollín frito crujiente, todo coronado con aderezo chipotle-sriracha y aguacate.',
     image: '',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7569415182758300936',
+    featured: true,
     ingredients: [
       '400 g de Atún en cubos',
       '3 cdas. de Salsa de Soya',
@@ -2428,6 +2429,7 @@ export const recipes: Recipe[] = [
     description: 'Filete de salmón en freidora de aire acompañado de espárragos salteados y bañado en salsa de soya, limón, miel y ajo. Dulce, salado e irresistible.',
     image: '',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7490394253072321797',
+    featured: true,
     ingredients: [
       '1 Filete de Salmón',
       'Espárragos',
@@ -2604,7 +2606,6 @@ export const recipes: Recipe[] = [
     description: 'Filetes de pescado con ajo dorado, chile guajillo, vino blanco y salsa Maggi. Un clásico del mar hecho en casa.',
     image: '',
     tiktokUrl: 'https://vm.tiktok.com/ZMMwt9S6M/',
-    featured: true,
     ingredients: [
       '3 Filetes de Pescado',
       'Sal al gusto',
@@ -4930,7 +4931,6 @@ export const recipes: Recipe[] = [
     description: 'Pollo crujiente en salsa agridulce de naranja con chile de árbol. El favorito de los que aman la comida asiática.',
     image: '',
     tiktokUrl: 'https://vm.tiktok.com/ZMrxcFUFF/',
-    featured: true,
     ingredients: [
       '600 g de Pechuga de Pollo',
       '2 Huevos',
@@ -5501,7 +5501,6 @@ export const recipes: Recipe[] = [
     description: 'Arroz verde con chiles poblanos, elote y cilantro. Un arroz diferente, cremoso y con mucho sabor mexicano.',
     image: '',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7406793431621717254',
-    featured: true,
     ingredients: [
       '2 Chiles Poblanos',
       '1 diente de Ajo',
@@ -5665,7 +5664,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Chicken Tenders Caseros'),
     category: 'Comida Americana',
     description: 'Tiras de pollo crujientes con empanizado de cornflake y especias. Perfectas para botana o cena, acompañadas de tu dip favorito.',
-    image: '',
+    image: '/images/recipes/ChickenTendersCaseros.jpeg',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7524913356415749394',
     ingredients: [
       '500 g de Pechuga de Pollo en tiras',
