@@ -780,7 +780,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Ensalada de Col'),
     category: 'Salsas y Acompañamientos',
     description: 'Una ensalada de repollo fresca y cremosa. El acompañamiento perfecto para tacos de pescado, burritos y más.',
-    image: '/images/recipes/EnsaladadeCol.png',
+    image: '/images/recipes/EnsaladadeCol.jpg',
     tiktokUrl: '',
     ingredients: [
       '⅓ Col Morada',
