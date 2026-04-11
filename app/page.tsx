@@ -58,7 +58,7 @@ export default function HomePage() {
               Ver Recetas
             </Link>
             <Link href="/historia" className="btn-outline-white">
-              Conoce la Historia
+              Conoce mi Historia
             </Link>
           </div>
         </div>
