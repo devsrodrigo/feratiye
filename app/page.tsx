@@ -192,7 +192,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
             <p className="section-label mb-4">Hecho a mano</p>
-            <h2 className="text-3xl md:text-4xl">Productos Artesanales</h2>
+            <h2 className="text-3xl md:text-4xl">Productos</h2>
             <div className="editorial-rule" />
             <p className="text-dark/60 mt-6 max-w-lg mx-auto text-sm leading-relaxed">
               Ingredientes pensados para elevar tus platillos. Hechos con la misma 
@@ -213,7 +213,7 @@ export default function HomePage() {
       ═══════════════════════════════════════════════ */}
       <section className="py-20 lg:py-28 px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl mb-6">¿Listo para cocinar?</h2>
+          <h2 className="text-3xl md:text-5xl mb-6">¿Listo/a para cocinar?</h2>
           <div className="editorial-rule" />
           <p className="text-dark/60 mt-8 mb-10 text-lg leading-relaxed">
             Encuentra la receta perfecta para hoy. Fácil, rica y con ingredientes 

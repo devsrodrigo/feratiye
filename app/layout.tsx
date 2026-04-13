@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Fernando Atiye',
     description:
-      'Cocinar rico no tiene por qué ser complicado. Recetas caseras y productos artesanales.',
+      'Cocinar rico no tiene por qué ser complicado. Recetas caseras y productos.',
   },
 };
 
