@@ -35,7 +35,7 @@ export const products: Product[] = [
     description:
       'Una salsa innovadora que fusiona el umami del Macha con chiles mexicanos. Perfecta para sushi, poke bowls y más.',
     longDescription:
-      'La Salsa Macha Estilo Fusión nace de la pasión por experimentar con sabores de diferentes culturas. Combinamos Macha ceremonial japonés con chiles guajillo y chipotle mexicanos, aceite de ajonjolí, salsa de soya y un toque de miel de abeja. El resultado es una salsa única que va perfecto con sushi, poke bowls, tacos de pescado o incluso como dip para tempura. Una aventura de sabor en cada gota.',
+      'La Salsa Macha Estilo Fusión nace de una receta tradicional veracruzana: salsa macha con chile de árbol, ajo, cebolla, cacahuates, ajonjolí y un toque de tortilla quemada para un fondo ahumado y profundo. Todo se mezcla en aceite y se sazona con sal y pimienta, logrando una salsa con carácter, textura real y un picor limpio que va bien con todo, desde tacos y mariscos hasta huevos y arroces. Una vuelta de tuerca a un clásico mexicano.',
     price: '$129',
   },
   {
