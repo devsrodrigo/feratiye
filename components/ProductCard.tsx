@@ -1,27 +1,48 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import { formatProductImage, type Product } from '@/lib/products';
 import RecipeImage from './RecipeImage';
 
+const TRACKING_URL =
+  'https://script.google.com/macros/s/AKfycbwufRPDItj36aONtfd1wAoTfH3r7oyAvfdfav0LrU9CLLXPdHzpQqWks13EUb7oFcWP/exec';
+
+const exactProductNames: Record<string, string> = {
+  alioli: 'Alioli Artesanal',
+  chile: 'Chile de Árbol en Polvo',
+  macha: 'Salsa Matcha',
+  ajo_perejil: 'Sazonador Ajo con Perejil',
+};
+
 export default function ProductCard({ product }: { product: Product }) {
-  const router = useRouter();
+  const [message, setMessage] = useState<string | null>(null);
+  const [isSending, setIsSending] = useState(false);
 
   const handleClick = async () => {
+    if (isSending) {
+      return;
+    }
+
+    const productName = exactProductNames[product.id];
+    setIsSending(true);
+
     try {
-      await fetch('/api/product-click', {
+      await fetch(TRACKING_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ productId: product.id }),
+        body: JSON.stringify({ producto: productName }),
       });
     } catch (error) {
       console.error('Error tracking click:', error);
+    } finally {
+      setIsSending(false);
+      setMessage('Producto agotado. Próximamente disponible.');
     }
-    router.push(`/productos/${product.slug}`);
   };
 
   return (
     <button
+      type="button"
       onClick={handleClick}
       className="group block w-full text-left bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
     >
@@ -47,18 +68,27 @@ export default function ProductCard({ product }: { product: Product }) {
           {product.description}
         </p>
 
-        <div className="mt-4 inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest">
-          <span>Ver más</span>
-          <svg
-            className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2.5}
+        {message ? (
+          <p
+            className="mt-4 text-sm text-red-600 font-semibold"
+            aria-live="polite"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </div>
+            {message}
+          </p>
+        ) : (
+          <div className="mt-4 inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest">
+            <span>{isSending ? 'Enviando...' : 'Ver más'}</span>
+            <svg
+              className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2.5}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </div>
+        )}
       </div>
     </button>
   );
