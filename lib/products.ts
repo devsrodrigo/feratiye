@@ -21,11 +21,11 @@ export const products: Product[] = [
   {
     id: 'chile',
     slug: 'chile',
-    name: 'Chile de Árbol en Polvo Premium',
+    name: 'Chile de Árbol Martajado',
     description:
-      'Chile de árbol molido a la perfección. Picor intenso con notas ahumadas para darle vida a cualquier platillo.',
+      'Chile de árbol martajado artesanalmente. Textura real, picor intenso y notas ahumadas para darle vida a cualquier platillo.',
     longDescription:
-      'Seleccionamos los mejores chiles de árbol, los tostamos artesanalmente y los molemos hasta obtener un polvo fino y aromático. El resultado es un chile con un picor limpio e intenso, con notas ligeramente ahumadas que realzan el sabor de cualquier platillo. Perfecto para espolvorear sobre tacos, sopas, salsas, carnes asadas o incluso frutas. Un must-have para quienes disfrutan del buen picante.',
+      'Seleccionamos los mejores chiles de árbol, los tostamos artesanalmente y los martajamos para conservar su textura, aroma y personalidad. El resultado es un chile con un picor limpio e intenso, con notas ligeramente ahumadas que realzan el sabor de cualquier platillo. Perfecto para añadir sobre tacos, sopas, salsas, carnes asadas o incluso frutas. Un must-have para quienes disfrutan del buen picante.',
     price: '$89',
   },
   {
@@ -57,7 +57,7 @@ export function getProductBySlug(slug: string): Product | undefined {
 export function formatProductImage(slug: string): string {
   const productImages: Record<string, string> = {
     alioli: '/images/products/Artisanaliolijarcloseup.png',
-    chile: '/images/products/ChiledeArbolenPolvoPremium.png',
+    chile: '/images/products/ChiledeArbolMartajadojar.png',
     macha: '/images/products/SalsaMachaEstiloFusionjar.png',
     ajo_perejil: '/images/products/Garlicandparsleyseasoningjar.png',
   };

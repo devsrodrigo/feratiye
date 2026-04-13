@@ -64,11 +64,11 @@ export default function HistoriaPage() {
           <div className="my-16 grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="relative aspect-[4/5] rounded-xl overflow-hidden bg-cream">
               <Image
-                src="/images/feratiye1.jpeg"
+                src="/images/feratiye4.jpeg"
                 alt="Fernando Atiye — momentos en la cocina"
                 fill
                 sizes="(max-width: 640px) 100vw, 33vw"
-                className="object-cover hover:scale-105 transition-transform duration-500"
+                className="object-cover object-center hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="relative aspect-[4/5] rounded-xl overflow-hidden bg-cream">
@@ -148,6 +148,18 @@ export default function HistoriaPage() {
                 Porque al final, la cocina no se trata solo de recetas, sino de todo lo que sucede alrededor de ellas: los momentos, las personas y lo que se comparte en cada mesa.
               </p>
             </div>
+          </div>
+
+          {/* Full-width photo after Visión Futura */}
+          <div className="my-12 relative w-full rounded-xl overflow-hidden bg-cream">
+            <Image
+              src="/images/feratiye5.jpeg"
+              alt="Fernando Atiye — cocina y comunidad"
+              width={1200}
+              height={800}
+              sizes="(max-width: 768px) 100vw, 900px"
+              className="w-full h-auto object-cover"
+            />
           </div>
 
           {/* Closing */}

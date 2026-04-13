@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import Link from 'next/link';
 import { formatProductImage, type Product } from '@/lib/products';
 import RecipeImage from './RecipeImage';
 
@@ -9,41 +9,28 @@ const TRACKING_URL =
 
 const exactProductNames: Record<string, string> = {
   alioli: 'Alioli Artesanal',
-  chile: 'Chile de Árbol en Polvo',
+  chile: 'Chile de Árbol Martajado',
   macha: 'Salsa Matcha',
   ajo_perejil: 'Sazonador Ajo con Perejil',
 };
 
 export default function ProductCard({ product }: { product: Product }) {
-  const [message, setMessage] = useState<string | null>(null);
-  const [isSending, setIsSending] = useState(false);
-
-  const handleClick = async () => {
-    if (isSending) {
-      return;
-    }
-
+  const handleClick = () => {
     const productName = exactProductNames[product.id];
-    setIsSending(true);
-
-    try {
-      await fetch(TRACKING_URL, {
+    if (productName) {
+      fetch(TRACKING_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ producto: productName }),
-      });
-    } catch (error) {
-      console.error('Error tracking click:', error);
-    } finally {
-      setIsSending(false);
-      setMessage('Producto agotado. Próximamente disponible.');
+      }).catch(() => {});
     }
   };
 
   return (
-    <button
-      type="button"
+    <Link
+      href={`/productos/${product.slug}`}
+      prefetch={true}
       onClick={handleClick}
       className="group block w-full text-left bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
     >
@@ -68,29 +55,19 @@ export default function ProductCard({ product }: { product: Product }) {
         <p className="text-dark/60 text-sm leading-relaxed line-clamp-2">
           {product.description}
         </p>
-
-        {message ? (
-          <p
-            className="mt-4 text-sm text-red-600 font-semibold"
-            aria-live="polite"
+        <div className="mt-4 inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest">
+          <span>Ver más</span>
+          <svg
+            className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2.5}
           >
-            {message}
-          </p>
-        ) : (
-          <div className="mt-4 inline-flex items-center gap-2 text-primary text-xs uppercase tracking-widest">
-            <span>{isSending ? 'Enviando...' : 'Ver más'}</span>
-            <svg
-              className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2.5}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </div>
-        )}
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </div>
       </div>
-    </button>
+    </Link>
   );
 }
