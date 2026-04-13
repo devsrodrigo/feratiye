@@ -2390,8 +2390,8 @@ export const recipes: Recipe[] = [
     ],
   },
   {
-    title: 'Mariscos al Disco',
-    slug: generateSlug('Mariscos al Disco'),
+    title: 'Discada de Mariscos',
+    slug: generateSlug('Discada de Mariscos'),
     category: 'Pescado',
     description: 'Gran disco de mariscos con pulpo, calamar, camarones y filete de pescado salteados con tocino, pimientos, tomate y cerveza. Una fiesta en un solo platillo.',
     image: '',

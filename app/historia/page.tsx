@@ -21,7 +21,7 @@ export default function HistoriaPage() {
           </h1>
           <div className="editorial-rule !bg-blush/50" />
           <p className="text-white/60 mt-8 text-lg leading-relaxed max-w-xl mx-auto">
-            Más que un recetario, esto es un pedacito de mí. De mi historia. De mi cocina. De mi día a día.
+            Más que una página, este es un pedacito de mí; de mi historia, de mi cocina y de todo lo que he construido alrededor de ella.
           </p>
         </div>
       </section>
@@ -142,7 +142,7 @@ export default function HistoriaPage() {
 
             <div className="space-y-6 text-dark/75 text-base md:text-lg leading-relaxed">
               <p>
-                Esta página es solo el comienzo de un proyecto que seguirá creciendo y evolucionando. Mi sueño seguir creciendo esta comunidad que tanto aprecio y, con el tiempo, llevar esto más allá de la pantalla: crear productos, experiencias y espacios que conecten a las personas a través de la comida, y que todo lo que hoy ves aquí pueda formar parte de tu día a día de una forma aún más cercana.
+                Esta página es solo el comienzo de un proyecto que seguirá creciendo y evolucionando. Mi sueño es seguir creciendo esta comunidad que tanto aprecio y, con el tiempo, llevar esto más allá de la pantalla: crear productos, experiencias y espacios que conecten a las personas a través de la comida, y que todo lo que hoy ves aquí pueda formar parte de tu día a día de una forma aún más cercana.
               </p>
               <p>
                 Porque al final, la cocina no se trata solo de recetas, sino de todo lo que sucede alrededor de ellas: los momentos, las personas y lo que se comparte en cada mesa.
