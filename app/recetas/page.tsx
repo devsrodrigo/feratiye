@@ -9,6 +9,35 @@ export const metadata: Metadata = {
     'Todas las recetas caseras de Fernando Atiye. Fáciles, prácticas y llenas de sabor. ¡Venga!',
 };
 
+function interleaveRecipesByCategory(recipesList: typeof recipes, categoryOrder: typeof categories) {
+  const grouped = categoryOrder.reduce<Record<string, typeof recipes>>((acc, category) => {
+    acc[category] = [];
+    return acc;
+  }, {} as Record<string, typeof recipes>);
+
+  recipesList.forEach((recipe) => {
+    const category = normalizeCategory(recipe.category);
+    if (grouped[category]) {
+      grouped[category].push(recipe);
+    } else {
+      grouped[category] = [recipe];
+    }
+  });
+
+  const maxItems = Math.max(...Object.values(grouped).map((items) => items.length));
+  const interleaved: typeof recipes = [];
+
+  for (let index = 0; index < maxItems; index += 1) {
+    for (const category of categoryOrder) {
+      if (grouped[category][index]) {
+        interleaved.push(grouped[category][index]);
+      }
+    }
+  }
+
+  return interleaved;
+}
+
 export default async function RecetasPage({
   searchParams,
 }: {
@@ -18,7 +47,7 @@ export default async function RecetasPage({
 
   const filtered = categoria
     ? recipes.filter((r) => generateSlug(normalizeCategory(r.category)) === categoria)
-    : recipes;
+    : interleaveRecipesByCategory(recipes, categories);
 
   const activeCategory = categoria
     ? categories.find((c) => generateSlug(c) === categoria)
