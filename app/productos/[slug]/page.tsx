@@ -89,10 +89,10 @@ export default async function ProductDetailPage({
               {/* SOLD OUT Banner */}
               <div className="bg-dark text-white text-center py-6 px-8 rounded-lg">
                 <p className="uppercase tracking-[0.2em] text-2xl md:text-3xl mb-2">
-                  Coming Soon
+                  Próximamente
                 </p>
                 <p className="text-white/60 text-sm">
-                  Este producto se agotó. Sígueme en redes para enterarte del próximo lote.
+                  Próximamente disponible. Sígueme en redes para enterarte del próximo lote.
                 </p>
               </div>
 
