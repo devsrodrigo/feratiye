@@ -92,7 +92,7 @@ export default async function ProductDetailPage({
                   Próximamente
                 </p>
                 <p className="text-white/60 text-sm">
-                  Próximamente disponible. Sígueme en redes para enterarte del próximo lote.
+                  Próximamente disponible. Sígueme en redes para enterarte del lanzamiento.
                 </p>
               </div>
 
