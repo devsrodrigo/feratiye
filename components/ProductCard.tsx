@@ -21,7 +21,7 @@ export default function ProductCard({ product }: { product: Product }) {
       fetch(TRACKING_URL, {
         method: 'POST',
         mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'text/plain' },
         body: JSON.stringify({ producto: productName }),
       }).catch(() => {});
     }
