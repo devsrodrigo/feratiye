@@ -84,13 +84,10 @@ export default function HomePage() {
               <h2 className="text-3xl md:text-5xl mb-6">¡Venga!</h2>
               <div className="editorial-rule !mx-0" />
               <p className="text-dark/70 text-base md:text-lg leading-relaxed mt-8 mb-4">
-                Lo que comenzó como un intento por promocionar quesos durante la pandemia
-                se convirtió en una de las pasiones más grandes de mi vida. Más de cuatro años
-                compartiendo recetas en redes sociales, con una comunidad increíble de más de
-                1,000,000 personas que confían en mi cocina.
+                Después de más de cinco años compartiendo recetas en redes sociales y con el apoyo de una comunidad de más de 850,000 personas, con millones de reproducciones, decidí crear esta página.
               </p>
               <p className="text-dark/70 text-base md:text-lg leading-relaxed">
-                Este recetario es un pedacito de mí. De mi historia. De mi cocina. De mi día a día.
+                Más que una página, este es un espacio personal: mi historia, mi cocina y todo lo que he construido alrededor del sabor.
               </p>
               <Link
                 href="/historia"
