@@ -582,7 +582,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Cebollitas en Vinagre'),
     category: 'Salsas y Acompañamientos',
     description: 'Cebolla dorada en aceite con orégano, caldo de pollo y vinagre. Un acompañamiento rápido ideal para tacos, carnes o botanas.',
-    image: '',
+    image: '/images/recipes/CebollitasenVinagre.jpeg',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7439596189621783863',
     ingredients: [
       '1 Cebolla Blanca o Morada',
@@ -2665,7 +2665,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Camarones al Coco'),
     category: 'Pescado',
     description: 'Camarones empanizados en panko y coco, servidos con una salsa dulce y picante de mango y habanero.',
-    image: '',
+    image: '/images/recipes/CamaronesalCoco.jpeg',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7355684765170732294',
     ingredients: [
       'Camarones sazonados con sal, pimienta, paprika y ajo en polvo',
@@ -2700,7 +2700,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Salmón en Salsa de Miel y Mostaza'),
     category: 'Pescado',
     description: 'Filete de salmón glaseado con miel y mostaza, acompañado de quinoa y brócoli al vapor.',
-    image: '',
+    image: '/images/recipes/SalmonenSalsadeMielyMostaza.jpeg',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7348301062010309894',
     ingredients: [
       '1 cucharada de Mostaza',
@@ -2727,7 +2727,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Sashimi de Atún'),
     category: 'Pescado',
     description: 'Láminas finas de atún fresco con aguacate, pepino y salsa cítrica de soya, Maggi y sriracha.',
-    image: '',
+    image: '/images/recipes/SashimideAtun.jpeg',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7334927804204584197',
     ingredients: [
       'Medallón de Atún',
@@ -2793,7 +2793,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Fajitas de Camarón Estilo Tex-Mex'),
     category: 'Pescado',
     description: 'Fajitas de camarón con pimientos y cebolla al estilo Tex-Mex, servidas en tortillas de harina con mayonesa de chipotle.',
-    image: '',
+    image: '/images/recipes/FajitasdeCamaronEstiloTexmex.jpeg',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7327521226665086213',
     ingredients: [
       'Aceite de Oliva',
@@ -2829,7 +2829,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Calabacitas Rellenas de Carne'),
     category: 'Comida Casera',
     description: 'Calabacitas cocidas y rellenas de carne molida sazonada, cubiertas con salsa de tomate y pulpa de calabacita. Un guisado casero lleno de sabor.',
-    image: '',
+    image: '/images/recipes/CalabacitasdeRes.jpg',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7624052255767285013',
     ingredients: [
       '6 Calabacitas',
@@ -3198,7 +3198,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Molletes con Pico de Gallo'),
     category: 'Comida Casera',
     description: 'Molletes de bolillo dorado con frijoles bayos, pollo cremoso con tocino y chipotles, queso manchego gratinado y aguacate fresco.',
-    image: '',
+    image: '/images/recipes/MolletesconPicodeGallo.jpeg',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7511037233013460242',
     ingredients: [
       'Bolillos',
@@ -3318,7 +3318,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Discada de Res'),
     category: 'Comida Casera',
     description: 'Tocino, chorizo y pulpa negra de res cocinados en disco con cebolla, chile poblano y tomate. El clásico norteño servido con tortillas.',
-    image: '',
+    image: '/images/recipes/DiscadadeRes.jpg',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7496345363885051143',
     ingredients: [
       'Manteca o aceite vegetal',
@@ -3616,7 +3616,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Pierna en Salsa Verde'),
     category: 'Comida Casera',
     description: 'Trozos de pierna de cerdo dorados en salsa verde de tomatillo con jalapeño y cilantro. Casero y reconfortante.',
-    image: '',
+    image: '/images/recipes/PiernaenSalsaVerde.jpeg',
     tiktokUrl: 'https://vt.tiktok.com/ZShqQXK3E/',
     ingredients: [
       '600 g de Pierna de Cerdo en trozos',
@@ -3676,7 +3676,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Alambre de Res'),
     category: 'Comida Casera',
     description: 'Pulpa negra de res con tocino, pimientos de colores y queso Chihuahua. Un alambre generoso y lleno de sabor.',
-    image: '',
+    image: '/images/recipes/AlambredeRes.jpeg',
     tiktokUrl: 'https://vt.tiktok.com/ZShqQe3QC/',
     ingredients: [
       '3 tiras de Tocino de Cerdo',
@@ -3726,7 +3726,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Tacos Rojos'),
     category: 'Comida Casera',
     description: 'Tortillas pasadas por adobo de chile guajillo con relleno de papa y zanahoria. Un taco mexicano de película.',
-    image: '',
+    image: '/images/recipes/TacosRojos.jpeg',
     tiktokUrl: 'https://vt.tiktok.com/ZShqQ7HJp/',
     ingredients: [
       '2 Papas Blancas',
@@ -5263,7 +5263,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Honey Walnut Shrimp'),
     category: 'Comida Asiática',
     description: 'Camarones fritos crujientes con aderezo cremoso de miel y crema, coronados con nueces caramelizadas.',
-    image: '',
+    image: '/images/recipes/HoneyWalnutShrimp.jpeg',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7365254830928989456',
     ingredients: [
       'Agua',
@@ -5297,7 +5297,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Beijing Beef'),
     category: 'Comida Asiática',
     description: 'Tiras de res frita con pimiento y cebolla en salsa agridulce y picante, estilo restaurante chino.',
-    image: '',
+    image: '/images/recipes/BeijingBeef.jpeg',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7349689831259114758',
     ingredients: [
       'Milanesas de Pulpa Negra de Res',
@@ -5330,7 +5330,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Pollo Takeout Estilo Restaurante Chino'),
     category: 'Comida Asiática',
     description: 'Pollo frito con verduras salteadas y salsa estilo restaurante chino, servido sobre arroz frito opcional.',
-    image: '',
+    image: '/images/recipes/PolloTakeoutEstiloRestauranteChino.jpeg',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7344895120149466374',
     ingredients: [
       '2 pechugas de pollo',
@@ -6017,7 +6017,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Chicken Bacon Cheesesteak'),
     category: 'Comida Americana',
     description: 'Sándwich de pollo con tocino, pimientos y queso gouda gratinado, servido en un baguette con aderezo de chipotle.',
-    image: '',
+    image: '/images/recipes/ChickenBaconCheesesteak.jpeg',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7346079981837044998',
     ingredients: [
       '1 pimiento verde',
@@ -6048,7 +6048,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Sándwich de Ribeye con Champiñones'),
     category: 'Comida Americana',
     description: 'Sándwich de ribeye sellado con champiñones cremosos y mezcla de quesos gratinados en pan tostado.',
-    image: '',
+    image: '/images/recipes/SandwichdeRibeyeconChampinones.jpeg',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7340481140534283526',
     ingredients: [
       '2 filetes de ribeye',
@@ -6085,7 +6085,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Nashville Hot Chicken Sandwich'),
     category: 'Comida Americana',
     description: 'Sándwich estilo Nashville con pollo frito picante, ensalada de col y pan untado con mayonesa o ranch.',
-    image: '',
+    image: '/images/recipes/NashvilleHotChickenSandwich.jpeg',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7333095276317527301',
     ingredients: [
       '1 pechuga de pollo',
@@ -6126,7 +6126,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Alitas Adobadas'),
     category: 'Comida Americana',
     description: 'Alitas adobadas en soya y laurel, doradas en sartén y terminadas en freidora de aire para un sabor profundo y jugoso.',
-    image: '',
+    image: '/images/recipes/AlitasAdobadas.jpeg',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7325290767415561478',
     ingredients: [
       '500 g de alitas',
