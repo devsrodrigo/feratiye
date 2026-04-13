@@ -2394,7 +2394,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Discada de Mariscos'),
     category: 'Pescado',
     description: 'Gran disco de mariscos con pulpo, calamar, camarones y filete de pescado salteados con tocino, pimientos, tomate y cerveza. Una fiesta en un solo platillo.',
-    image: '',
+    image: '/images/recipes/MariscosalDisco.jpeg',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7531595328785550610',
     ingredients: [
       '400 g de Tocino de Cerdo',
@@ -2759,7 +2759,7 @@ export const recipes: Recipe[] = [
     slug: generateSlug('Tostadas de Chicharrón de Atún'),
     category: 'Pescado',
     description: 'Tostadas crujientes con cubos de atún empanizados, guacamole y toppings frescos.',
-    image: '',
+    image: '/images/recipes/TostadasdeChicharrondeAtun.jpeg',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7330122780177960198',
     ingredients: [
       '2 Medallones de Atún',
