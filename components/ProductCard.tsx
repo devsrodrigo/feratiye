@@ -18,12 +18,8 @@ export default function ProductCard({ product }: { product: Product }) {
   const handleClick = () => {
     const productName = exactProductNames[product.id];
     if (productName) {
-      fetch(TRACKING_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain' },
-        body: JSON.stringify({ producto: productName }),
-      }).catch(() => {});
+      const url = `${TRACKING_URL}?producto=${encodeURIComponent(productName)}`;
+      fetch(url).catch(() => {});
     }
   };
 
