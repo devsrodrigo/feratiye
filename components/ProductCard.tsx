@@ -10,7 +10,7 @@ const TRACKING_URL =
 const exactProductNames: Record<string, string> = {
   alioli: 'Alioli Artesanal',
   chile: 'Chile de Árbol Martajado',
-  macha: 'Salsa Matcha',
+  macha: 'Salsa Macha Tradicional',
   ajo_perejil: 'Sazonador Ajo con Perejil',
 };
 
