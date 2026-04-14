@@ -31,11 +31,11 @@ export const products: Product[] = [
   {
     id: 'macha',
     slug: 'macha',
-    name: 'Salsa Macha Estilo Fusión',
+    name: 'Salsa Macha Tradicional',
     description:
-      'Una salsa innovadora que fusiona el umami del Macha con chiles mexicanos. Perfecta para sushi, poke bowls y más.',
+      'Una salsa tradicional veracruzana con chile de árbol, ajo, cebolla, cacahuates y ajonjolí. Perfecta para tacos, mariscos y más.',
     longDescription:
-      'La Salsa Macha Estilo Fusión nace de una receta tradicional veracruzana: salsa macha con chile de árbol, ajo, cebolla, cacahuates, ajonjolí y un toque de tortilla quemada para un fondo ahumado y profundo. Todo se mezcla en aceite y se sazona con sal y pimienta, logrando una salsa con carácter, textura real y un picor limpio que va bien con todo, desde tacos y mariscos hasta huevos y arroces. Una vuelta de tuerca a un clásico mexicano.',
+      'La Salsa Macha Tradicional respeta la receta veracruzana original: chile de árbol, ajo, cebolla, cacahuates y ajonjolí en aceite, con un toque de tortilla quemada para un fondo ahumado y profundo. Sazonada con sal y pimienta, resulta en una salsa con carácter, textura real y un picor limpio que eleva tacos, mariscos, huevos y arroces. Un clásico mexicano hecho con cariño.',
     price: '$129',
   },
   {
@@ -58,7 +58,7 @@ export function formatProductImage(slug: string): string {
   const productImages: Record<string, string> = {
     alioli: '/images/products/Artisanaliolijarcloseup.png',
     chile: '/images/products/ChiledeArbolMartajadojar.png',
-    macha: '/images/products/SalsaMachaEstiloFusionjar.png',
+    macha: '/images/products/SalsaMachaTradicionaljarcloseup.png',
     ajo_perejil: '/images/products/Garlicandparsleyseasoningjar.png',
   };
 
