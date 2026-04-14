@@ -14,7 +14,7 @@ const categoryIcons: Record<string, string> = {
   'Cocina Italiana': '/foodicons/pastas.png',
   'Cocina Asiática': '/foodicons/comidachina.png',
   'Cocina Americana': '/foodicons/comidaamericana.png',
-  Mariscos: '/foodicons/pescado.png',
+  'Del Mar': '/foodicons/pescado.png',
   Saludable: '/foodicons/saludable.png',
   Bebidas: '/foodicons/drinks.png',
   Postres: '/foodicons/postres.png',
@@ -87,7 +87,7 @@ export default function HomePage() {
                 Después de más de cinco años compartiendo recetas en redes sociales y con el apoyo de una comunidad de más de 850,000 personas, con millones de reproducciones, decidí crear esta página.
               </p>
               <p className="text-dark/70 text-base md:text-lg leading-relaxed">
-                Más que una página, este es un espacio personal: mi historia, mi cocina y todo lo que he construido alrededor del sabor.
+                Más que una página, este es un pedacito de mí; de mi historia, de mi cocina y de todo lo que he construido alrededor de ella.
               </p>
               <Link
                 href="/historia"
