@@ -1,15 +1,16 @@
 'use client';
 
-import type { ChangeEvent } from 'react';
+import type { ChangeEvent, RefObject } from 'react';
 
 interface SearchBarProps {
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
   className?: string;
+  inputRef?: RefObject<HTMLInputElement | null>;
 }
 
-export default function SearchBar({ value, onChange, placeholder, className }: SearchBarProps) {
+export default function SearchBar({ value, onChange, placeholder, className, inputRef }: SearchBarProps) {
   return (
     <div className={className}>
       <label className="relative block">
@@ -21,6 +22,7 @@ export default function SearchBar({ value, onChange, placeholder, className }: S
           </svg>
         </span>
         <input
+          ref={inputRef}
           type="search"
           value={value}
           onChange={(event: ChangeEvent<HTMLInputElement>) => onChange(event.target.value)}

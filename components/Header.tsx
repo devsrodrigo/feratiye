@@ -1,9 +1,12 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { categories, generateSlug } from '@/lib/recipes';
+import { categories, generateSlug, normalizeCategory, recipes } from '@/lib/recipes';
+import { products } from '@/lib/products';
+import { fuzzySearchItems } from '@/lib/search';
+import SearchBar from './SearchBar';
 
 const navLinks = [
   { label: 'Inicio', href: '/' },
@@ -18,12 +21,37 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [megaMenuVisible, setMegaMenuVisible] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const searchPanelRef = useRef<HTMLDivElement | null>(null);
+  const searchInputRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (searchOpen && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [searchOpen]);
+
+  useEffect(() => {
+    if (!searchOpen) {
+      return undefined;
+    }
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchPanelRef.current && !searchPanelRef.current.contains(event.target as Node)) {
+        setSearchOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [searchOpen]);
 
   useEffect(() => {
     if (mobileOpen) {
@@ -56,6 +84,31 @@ export default function Header() {
     timeoutRef.current = setTimeout(() => setMegaMenuVisible(false), 150);
   };
 
+  const searchRecipes = useMemo(() => {
+    const query = searchQuery.trim();
+    if (!query) return [];
+
+    return fuzzySearchItems(recipes, query, (recipe) => [
+      recipe.title,
+      recipe.category,
+      recipe.description,
+      recipe.ingredients.join(' '),
+    ]).slice(0, 4);
+  }, [searchQuery]);
+
+  const searchProducts = useMemo(() => {
+    const query = searchQuery.trim();
+    if (!query) return [];
+
+    return fuzzySearchItems(products, query, (product) => [
+      product.name,
+      product.description,
+      product.longDescription,
+    ]).slice(0, 3);
+  }, [searchQuery]);
+
+  const hasSearchResults = searchRecipes.length + searchProducts.length > 0;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -64,7 +117,7 @@ export default function Header() {
           : 'bg-white'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
         <nav className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
@@ -204,16 +257,18 @@ export default function Header() {
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg>
             </a>
-            <Link
-              href="/recetas"
+            <button
+              type="button"
+              onClick={() => setSearchOpen((open) => !open)}
               className="text-dark/50 hover:text-primary transition-colors"
-              aria-label="Buscar recetas"
+              aria-label="Abrir búsqueda"
+              aria-expanded={searchOpen}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <circle cx="11" cy="11" r="7" />
                 <path d="M21 21l-4.35-4.35" />
               </svg>
-            </Link>
+            </button>
           </div>
 
           {/* Mobile Hamburger */}
@@ -241,6 +296,70 @@ export default function Header() {
             </div>
           </button>
         </nav>
+
+        <div
+          ref={searchPanelRef}
+          className={`absolute right-6 top-full z-50 mt-2 w-[min(420px,calc(100vw-48px))] rounded-[2rem] border border-gray-200 bg-white p-4 shadow-2xl transition-all duration-200 ${
+            searchOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
+          } hidden lg:block`}
+        >
+          <div className="mb-4">
+            <SearchBar
+              value={searchQuery}
+              onChange={setSearchQuery}
+              placeholder="Buscar recetas o productos"
+              inputRef={searchInputRef}
+            />
+          </div>
+          <div className="space-y-4 max-h-72 overflow-y-auto">
+            {searchQuery.trim() ? (
+              hasSearchResults ? (
+                <>
+                  {searchRecipes.length > 0 && (
+                    <div className="space-y-2">
+                      <p className="text-[11px] uppercase tracking-[0.28em] text-dark/50">Recetas</p>
+                      <div className="space-y-2">
+                        {searchRecipes.map((recipe) => (
+                          <Link
+                            key={recipe.slug}
+                            href={`/recetas/${recipe.slug}`}
+                            onClick={() => setSearchOpen(false)}
+                            className="block rounded-3xl border border-gray-100 bg-gray-50 p-3 transition hover:border-primary"
+                          >
+                            <p className="font-semibold text-sm text-dark">{recipe.title}</p>
+                            <p className="text-[11px] text-dark/50">{normalizeCategory(recipe.category)}</p>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {searchProducts.length > 0 && (
+                    <div className="space-y-2">
+                      <p className="text-[11px] uppercase tracking-[0.28em] text-dark/50">Productos</p>
+                      <div className="space-y-2">
+                        {searchProducts.map((product) => (
+                          <Link
+                            key={product.id}
+                            href={`/productos/${product.slug}`}
+                            onClick={() => setSearchOpen(false)}
+                            className="block rounded-3xl border border-gray-100 bg-gray-50 p-3 transition hover:border-primary"
+                          >
+                            <p className="font-semibold text-sm text-dark">{product.name}</p>
+                            <p className="text-[11px] text-dark/50">{product.price}</p>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </>
+              ) : (
+                <p className="text-sm text-dark/60">No se encontraron resultados. Prueba otra palabra.</p>
+              )
+            ) : (
+              <p className="text-sm text-dark/60">Escribe algo para ver recetas y productos.</p>
+            )}
+          </div>
+        </div>
       </div>
 
       {/* Mobile Menu Overlay */}
@@ -253,6 +372,70 @@ export default function Header() {
       >
         <div className="px-6 py-8 h-full overflow-y-auto">
           <div className="flex flex-col gap-1">
+            {searchOpen && (
+              <div className="mb-6 rounded-[2rem] border border-gray-200 bg-gray-50 p-4">
+                <SearchBar
+                  value={searchQuery}
+                  onChange={setSearchQuery}
+                  placeholder="Buscar recetas o productos"
+                  inputRef={searchInputRef}
+                />
+                <div className="mt-4 space-y-3 max-h-60 overflow-y-auto">
+                  {searchQuery.trim() ? (
+                    hasSearchResults ? (
+                      <>
+                        {searchRecipes.length > 0 && (
+                          <div className="space-y-2">
+                            <p className="text-[11px] uppercase tracking-[0.28em] text-dark/50">Recetas</p>
+                            <div className="space-y-2">
+                              {searchRecipes.map((recipe) => (
+                                <Link
+                                  key={recipe.slug}
+                                  href={`/recetas/${recipe.slug}`}
+                                  onClick={() => {
+                                    setSearchOpen(false);
+                                    setMobileOpen(false);
+                                  }}
+                                  className="block rounded-3xl border border-gray-100 bg-white p-3 transition hover:border-primary"
+                                >
+                                  <p className="font-semibold text-sm text-dark">{recipe.title}</p>
+                                  <p className="text-[11px] text-dark/50">{normalizeCategory(recipe.category)}</p>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        {searchProducts.length > 0 && (
+                          <div className="space-y-2">
+                            <p className="text-[11px] uppercase tracking-[0.28em] text-dark/50">Productos</p>
+                            <div className="space-y-2">
+                              {searchProducts.map((product) => (
+                                <Link
+                                  key={product.id}
+                                  href={`/productos/${product.slug}`}
+                                  onClick={() => {
+                                    setSearchOpen(false);
+                                    setMobileOpen(false);
+                                  }}
+                                  className="block rounded-3xl border border-gray-100 bg-white p-3 transition hover:border-primary"
+                                >
+                                  <p className="font-semibold text-sm text-dark">{product.name}</p>
+                                  <p className="text-[11px] text-dark/50">{product.price}</p>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <p className="text-sm text-dark/60">No se encontraron resultados. Prueba otra palabra.</p>
+                    )
+                  ) : (
+                    <p className="text-sm text-dark/60">Escribe algo para ver recetas y productos.</p>
+                  )}
+                </div>
+              </div>
+            )}
             {navLinks.map((link) =>
               link.label === 'Recetas' ? (
                 <div key={link.label}>
@@ -371,18 +554,19 @@ export default function Header() {
                 </svg>
               </a>
             </div>
-            <Link
-              href="/recetas"
-              onClick={() => setMobileOpen(false)}
+            <button
+              type="button"
+              onClick={() => setSearchOpen((open) => !open)}
               className="mt-6 inline-flex items-center gap-2 text-dark/70 hover:text-primary transition-colors"
-              aria-label="Buscar recetas"
+              aria-label="Abrir búsqueda"
+              aria-expanded={searchOpen}
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <circle cx="11" cy="11" r="7" />
                 <path d="M21 21l-4.35-4.35" />
               </svg>
-              Buscar recetas
-            </Link>
+              {searchOpen ? 'Cerrar búsqueda' : 'Buscar recetas'}
+            </button>
           </div>
         </div>
       </div>
