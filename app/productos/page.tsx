@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { products } from '@/lib/products';
 import ProductCard from '@/components/ProductCard';
+import ProductSearchSection from '@/components/ProductSearchSection';
 
 export const metadata: Metadata = {
   title: 'Productos — Fernando Atiye',
@@ -26,16 +27,7 @@ export default function ProductosPage() {
         </div>
       </section>
 
-      {/* Products Grid */}
-      <section className="py-16 lg:py-24 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-10">
-            {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProductSearchSection initialProducts={products} />
 
       {/* Info Section */}
       <section className="py-16 lg:py-20 bg-cream px-6">

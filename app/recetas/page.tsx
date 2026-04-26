@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { recipes, categories, generateSlug, normalizeCategory } from '@/lib/recipes';
 import RecipeCard from '@/components/RecipeCard';
+import RecipeSearchSection from '@/components/RecipeSearchSection';
 
 export const metadata: Metadata = {
   title: 'Recetas — Fernando Atiye',
@@ -50,7 +51,7 @@ export default async function RecetasPage({
     : interleaveRecipesByCategory(recipes, categories);
 
   const activeCategory = categoria
-    ? categories.find((c) => generateSlug(c) === categoria)
+    ? categories.find((c) => generateSlug(c) === categoria) ?? null
     : null;
 
   return (
@@ -106,34 +107,7 @@ export default async function RecetasPage({
         </div>
       </section>
 
-      {/* Recipes Grid */}
-      <section className="py-12 lg:py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          {filtered.length > 0 ? (
-            <>
-              <p className="text-dark/40 text-xs uppercase tracking-widest mb-8">
-                {filtered.length} {filtered.length === 1 ? 'receta' : 'recetas'}
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filtered.map((recipe) => (
-                  <RecipeCard key={recipe.title} recipe={recipe} />
-                ))}
-              </div>
-            </>
-          ) : (
-            <div className="text-center py-20">
-              <span className="text-5xl block mb-4">🍳</span>
-              <h3 className="text-2xl mb-2">No se encontraron recetas</h3>
-              <p className="text-dark/60 mb-6">
-                Prueba con otra categoría o explora todas las recetas.
-              </p>
-              <Link href="/recetas" className="btn-primary">
-                Ver Todas
-              </Link>
-            </div>
-          )}
-        </div>
-      </section>
+      <RecipeSearchSection initialRecipes={filtered} activeCategory={activeCategory} />
     </>
   );
 }
