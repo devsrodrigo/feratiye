@@ -204,6 +204,16 @@ export default function Header() {
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg>
             </a>
+            <Link
+              href="/recetas"
+              className="text-dark/50 hover:text-primary transition-colors"
+              aria-label="Buscar recetas"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="7" />
+                <path d="M21 21l-4.35-4.35" />
+              </svg>
+            </Link>
           </div>
 
           {/* Mobile Hamburger */}
@@ -246,23 +256,33 @@ export default function Header() {
             {navLinks.map((link) =>
               link.label === 'Recetas' ? (
                 <div key={link.label}>
-                  <button
-                    onClick={() => setRecipesExpanded(!recipesExpanded)}
-                    className="nav-item w-full flex items-center justify-between text-left text-lg text-dark py-3 border-b border-gray-100"
-                  >
-                    <span>Recetas</span>
-                    <svg
-                      className={`w-4 h-4 transition-transform duration-200 ${
-                        recipesExpanded ? 'rotate-180' : ''
-                      }`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
+                  <div className="flex items-center justify-between border-b border-gray-100">
+                    <Link
+                      href="/recetas"
+                      onClick={() => setMobileOpen(false)}
+                      className="nav-item text-lg text-dark py-3"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
+                      Recetas
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => setRecipesExpanded(!recipesExpanded)}
+                      className="p-3 text-dark"
+                      aria-label={recipesExpanded ? 'Cerrar categorías de recetas' : 'Abrir categorías de recetas'}
+                    >
+                      <svg
+                        className={`w-4 h-4 transition-transform duration-200 ${
+                          recipesExpanded ? 'rotate-180' : ''
+                        }`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  </div>
                   <div
                     className={`overflow-hidden transition-all duration-300 ${
                       recipesExpanded ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
@@ -351,6 +371,18 @@ export default function Header() {
                 </svg>
               </a>
             </div>
+            <Link
+              href="/recetas"
+              onClick={() => setMobileOpen(false)}
+              className="mt-6 inline-flex items-center gap-2 text-dark/70 hover:text-primary transition-colors"
+              aria-label="Buscar recetas"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="7" />
+                <path d="M21 21l-4.35-4.35" />
+              </svg>
+              Buscar recetas
+            </Link>
           </div>
         </div>
       </div>

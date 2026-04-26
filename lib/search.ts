@@ -42,26 +42,39 @@ function tokenMatchScore(fields: string[], tokens: string[]): number | null {
     return null;
   }
 
-  const allTokensPresent = tokens.every((token) => fields.some((field) => field.includes(token)));
-  if (allTokensPresent) {
-    return 1;
-  }
+  let totalDistance = 0;
 
-  const fuzzyMatch = tokens.some((token) => {
-    return fields.some((field) => {
+  for (const token of tokens) {
+    let tokenMatched = false;
+
+    for (const field of fields) {
       const words = field.split(' ');
-      return words.some((word) => {
+      for (const word of words) {
         if (word.startsWith(token) || token.startsWith(word)) {
-          return true;
+          tokenMatched = true;
+          break;
         }
 
-        const threshold = Math.max(1, Math.floor(Math.min(word.length, token.length) * 0.3));
-        return levenshteinDistance(word, token) <= threshold;
-      });
-    });
-  });
+        const threshold = token.length <= 2 ? 0 : Math.max(1, Math.floor(Math.min(word.length, token.length) * 0.15));
+        const distance = levenshteinDistance(word, token);
+        if (distance <= threshold) {
+          totalDistance += distance;
+          tokenMatched = true;
+          break;
+        }
+      }
 
-  return fuzzyMatch ? 2 : null;
+      if (tokenMatched) {
+        break;
+      }
+    }
+
+    if (!tokenMatched) {
+      return null;
+    }
+  }
+
+  return totalDistance;
 }
 
 export function fuzzySearchItems<T>(
