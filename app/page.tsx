@@ -83,10 +83,10 @@ export default function HomePage() {
               <p className="section-label mb-6">Sobre Fernando</p>
               <h2 className="text-3xl md:text-5xl mb-6">¡Venga!</h2>
               <div className="editorial-rule !mx-0" />
-              <p className="text-dark/70 text-base md:text-lg leading-relaxed mt-8 mb-4">
+              <p className="text-dark/70 text-base md:text-lg leading-relaxed text-justify mt-8 mb-4">
                 Después de más de cinco años compartiendo recetas en redes sociales y con el apoyo de una comunidad de más de 850,000 personas, con millones de reproducciones, decidí crear esta página.
               </p>
-              <p className="text-dark/70 text-base md:text-lg leading-relaxed">
+              <p className="text-dark/70 text-base md:text-lg leading-relaxed text-justify">
                 Más que una página, este es un pedacito de mí; de mi historia, de mi cocina y de todo lo que he construido alrededor de ella.
               </p>
               <Link

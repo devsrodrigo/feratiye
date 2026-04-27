@@ -20,7 +20,7 @@ export default function HistoriaPage() {
             Mi Historia
           </h1>
           <div className="editorial-rule !bg-blush/50" />
-          <p className="text-white/60 mt-8 text-lg leading-relaxed max-w-xl mx-auto">
+          <p className="text-white/60 mt-8 text-lg leading-relaxed max-w-xl mx-auto text-justify">
             Más que una página, este es un pedacito de mí; de mi historia, de mi cocina y de todo lo que he construido alrededor de ella.
           </p>
         </div>
@@ -34,7 +34,7 @@ export default function HistoriaPage() {
             <h2 className="text-3xl md:text-4xl mb-8">El Origen</h2>
             <div className="editorial-rule !mx-0 !mb-8" />
 
-            <div className="space-y-6 text-dark/75 text-base md:text-lg leading-relaxed">
+            <div className="space-y-6 text-dark/75 text-base md:text-lg leading-relaxed text-justify">
               <p>
                 Nunca imaginé que lo que comenzó como un intento por promocionar quesos durante 
                 la pandemia se convertiría en una de las pasiones más grandes de mi vida.
@@ -50,7 +50,7 @@ export default function HistoriaPage() {
             <h2 className="text-3xl md:text-4xl mb-8">El Legado</h2>
             <div className="editorial-rule !mx-0 !mb-8" />
 
-            <div className="space-y-6 text-dark/75 text-base md:text-lg leading-relaxed">
+            <div className="space-y-6 text-dark/75 text-base md:text-lg leading-relaxed text-justify">
               <p>
                 La cocina ha sido parte de mí desde siempre. Mi abuelo, aunque falleció cuando yo tenía apenas seis años, dejó un legado muy grande. Era un verdadero maestro en la cocina: tenía muchas recetas, le encantaba consentirnos y cada platillo que preparaba dejaba sin palabras a todos sus familiares y amigos.
               </p>
@@ -107,7 +107,7 @@ export default function HistoriaPage() {
             <h2 className="text-3xl md:text-4xl mb-8">La Evolución</h2>
             <div className="editorial-rule !mx-0 !mb-8" />
 
-            <div className="space-y-6 text-dark/75 text-base md:text-lg leading-relaxed">
+            <div className="space-y-6 text-dark/75 text-base md:text-lg leading-relaxed text-justify">
               <p>
                 Después de más de cinco años compartiendo recetas en redes sociales, y con el increíble apoyo de la comunidad que se ha formado en torno a mi contenido — más de 850,000 personas en mis redes sociales y millones de reproducciones — decidí crear esta página.
               </p>
@@ -122,7 +122,7 @@ export default function HistoriaPage() {
             <h2 className="text-3xl md:text-4xl mb-8">La Filosofía</h2>
             <div className="editorial-rule !mx-0 !mb-8" />
 
-            <div className="space-y-6 text-dark/75 text-base md:text-lg leading-relaxed">
+            <div className="space-y-6 text-dark/75 text-base md:text-lg leading-relaxed text-justify">
               <p>
                 Las recetas que encontrarás aquí son fáciles, deliciosas y prácticas, hechas con ingredientes que muy probablemente ya tienes en casa. Están pensadas tanto para quienes están dando sus primeros pasos en la cocina, como para quienes ya disfrutan cocinar y quieren seguir aprendiendo y explorando.
               </p>
@@ -140,7 +140,7 @@ export default function HistoriaPage() {
             <h2 className="text-3xl md:text-4xl mb-8">Visión Futura</h2>
             <div className="editorial-rule !mx-0 !mb-8" />
 
-            <div className="space-y-6 text-dark/75 text-base md:text-lg leading-relaxed">
+            <div className="space-y-6 text-dark/75 text-base md:text-lg leading-relaxed text-justify">
               <p>
                 Esta página es solo el comienzo de un proyecto que seguirá creciendo y evolucionando. Mi sueño es seguir creciendo esta comunidad que tanto aprecio y, con el tiempo, llevar esto más allá de la pantalla: crear productos, experiencias y espacios que conecten a las personas a través de la comida, y que todo lo que hoy ves aquí pueda formar parte de tu día a día de una forma aún más cercana.
               </p>
@@ -164,10 +164,10 @@ export default function HistoriaPage() {
 
           {/* Closing */}
           <div className="text-center py-12 bg-cream rounded-lg px-8">
-            <p className="text-dark/60 text-base md:text-lg leading-relaxed mb-4">
+            <p className="text-dark/60 text-base md:text-lg leading-relaxed text-justify mb-4">
               Gracias por estar aquí.
             </p>
-            <p className="text-dark/60 text-base md:text-lg leading-relaxed mb-8">
+            <p className="text-dark/60 text-base md:text-lg leading-relaxed text-justify mb-8">
               Con mucho cariño, espero que la disfruten mucho.
               <br />
               Y sin más, comencemos a cocinar…
