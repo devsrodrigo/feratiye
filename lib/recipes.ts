@@ -4,7 +4,7 @@ export type Category =
   | 'Salsas y Guarniciones'
   | 'Arroz'
   | 'Casera'
-  | 'Cocina Italiana'
+  | 'Pastas'
   | 'Cocina Asiática'
   | 'Cocina Americana'
   | 'Del Mar'
@@ -16,7 +16,7 @@ export type LegacyCategory =
   | 'Dips y Aderezos'
   | 'Salsas y Acompañamientos'
   | 'Drinks'
-  | 'Pastas'
+  | 'Cocina Italiana'
   | 'Pescado'
   | 'Comida Casera'
   | 'Comida Asiática'
@@ -53,7 +53,7 @@ export const categories: Category[] = [
   'Salsas y Guarniciones',
   'Arroz',
   'Casera',
-  'Cocina Italiana',
+  'Pastas',
   'Cocina Asiática',
   'Cocina Americana',
   'Del Mar',
@@ -71,7 +71,7 @@ const categoryMigration: Record<LegacyCategory, Category> = {
   'Comida Asiática': 'Cocina Asiática',
   'Comida Americana': 'Cocina Americana',
   'Comida Casera': 'Casera',
-  Pastas: 'Cocina Italiana',
+  'Cocina Italiana': 'Pastas',
 };
 
 export function normalizeCategory(category: string): Category {
@@ -80,6 +80,16 @@ export function normalizeCategory(category: string): Category {
   }
 
   return categoryMigration[category as LegacyCategory] ?? 'Casera';
+}
+
+export function getCategoryFromSlug(slug: string): Category | null {
+  const directMatch = categories.find((category) => generateSlug(category) === slug);
+  if (directMatch) return directMatch;
+
+  const legacyMatch = Object.keys(categoryMigration).find(
+    (legacyCategory) => generateSlug(legacyCategory) === slug,
+  );
+  return legacyMatch ? categoryMigration[legacyMatch as LegacyCategory] : null;
 }
 
 export const recipes: Recipe[] = [
@@ -5847,25 +5857,37 @@ export const recipes: Recipe[] = [
     title: 'Hamburguesas con Mermelada de Tocino',
     slug: generateSlug('Hamburguesas con Mermelada de Tocino'),
     category: 'Comida Americana',
-    description: 'Jugosas hamburguesas caseras coronadas con mermelada de tocino caramelizado, queso cheddar y cebolla crujiente. El equilibrio perfecto entre dulce y ahumado.',
+    description: 'Hamburguesa con queso suizo y mermelada de tocino, servida en pan brioche con mayonesa de ajo y chile chiltepín.',
     image: '',
     tiktokUrl: 'https://www.tiktok.com/@fernandoatiye/video/7575365506773863698',
     ingredients: [
-      '500 g de Carne Molida de Res (80/20)',
-      '4 Panes para Hamburguesa',
-      '4 rebanadas de Queso Cheddar',
-      '1/2 taza de Tocino en cubos',
-      '1/4 taza de Azúcar Mascabado',
-      '1 cda. de Vinagre de Manzana',
-      'Lechuga, Jitomate y Pepinillos',
+      '500 g de Carne molida',
+      '½ Pimiento Rojo',
+      '½ Pimiento Verde',
+      '1/3 Cebolla Blanca',
+      '2 ramas de Apio',
+      '¼ de taza de Aceite de Oliva',
+      '½ taza de Miel de Maple',
+      '12 tiras de Tocino',
+      '½ cucharadita de Café Soluble',
+      '4 cucharadas de Vinagre de Manzana',
+      '2 dientes de Ajo',
+      '2 cucharadas de Chiles Chiltepín',
+      '2 cucharadas de Aceite de Oliva',
+      '½ taza de Mayonesa',
+      'Rebanadas de Queso Cheddar',
+      'Pan Brioche',
+      'Lechuga Fresca',
+      'Cebolla Morada',
       'Sal y Pimienta al gusto',
     ],
     steps: [
-      'Cocina el tocino hasta que esté crujiente; añade el azúcar mascabado y el vinagre y reduce hasta obtener una mermelada espesa.',
-      'Forma las hamburguesas, sazona con sal y pimienta.',
-      'Asa a fuego alto 3–4 minutos por lado; coloca el queso al final.',
-      'Tuesta los panes en el mismo sartén.',
-      'Arma la hamburguesa con lechuga, jitomate, pepinillos y la mermelada de tocino encima.',
+      'Prepara la mermelada de tocino: cocina el tocino hasta dorar, agrega la miel de maple, el café soluble y el vinagre de manzana; cocina a fuego bajo hasta que espese y reserva.',
+      'Prepara la mayonesa: mezcla o licúa los ajos, los chiles chiltepín y el aceite de oliva; integra con la mayonesa hasta obtener una consistencia homogénea y reserva.',
+      'Para la carne: pica en brunoise el apio, la cebolla y los pimientos; mézclalos con la carne molida, sal y pimienta, y forma las hamburguesas.',
+      'Cocina las hamburguesas en sartén o parrilla con un poco de aceite hasta dorar; coloca el queso suizo encima para que se derrita.',
+      'Tuesta ligeramente el pan brioche y unta la base con la mayonesa preparada.',
+      'Arma la hamburguesa colocando la carne con queso, la mermelada de tocino, la lechuga y los aros de cebolla morada; tapa y sirve.',
     ],
   },
   {
