@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { categories, generateSlug, normalizeCategory, recipes } from '@/lib/recipes';
 import { products } from '@/lib/products';
-import { fuzzySearchItems } from '@/lib/search';
+import { searchItems } from '@/lib/search';
 import SearchBar from './SearchBar';
 
 const navLinks = [
@@ -88,23 +88,19 @@ export default function Header() {
     const query = searchQuery.trim();
     if (!query) return [];
 
-    return fuzzySearchItems(recipes, query, (recipe) => [
-      recipe.title,
-      recipe.category,
-      recipe.description,
-      recipe.ingredients.join(' '),
-    ]).slice(0, 4);
+    return searchItems(recipes, query, (recipe) => ({
+      title: recipe.title,
+      category: normalizeCategory(recipe.category),
+    })).slice(0, 6);
   }, [searchQuery]);
 
   const searchProducts = useMemo(() => {
     const query = searchQuery.trim();
     if (!query) return [];
 
-    return fuzzySearchItems(products, query, (product) => [
-      product.name,
-      product.description,
-      product.longDescription,
-    ]).slice(0, 3);
+    return searchItems(products, query, (product) => ({
+      title: product.name,
+    })).slice(0, 3);
   }, [searchQuery]);
 
   const hasSearchResults = searchRecipes.length + searchProducts.length > 0;

@@ -29,6 +29,14 @@ export default function TranscribePage() {
         setError(data.error);
       } else {
         setResult(data.result);
+        // Éxito parcial: se muestran las URLs que sí fallaron.
+        if (Array.isArray(data.failures) && data.failures.length) {
+          setError(
+            `${data.failures.length} video(s) fallaron:\n${data.failures
+              .map((entry: { url: string; error: string }) => `• ${entry.url}\n  ${entry.error}`)
+              .join('\n')}`,
+          );
+        }
       }
     } catch {
       setError('An error occurred. Please try again.');
@@ -56,17 +64,20 @@ export default function TranscribePage() {
         <div className="flex flex-col gap-4">
           <div>
             <label htmlFor="url" className="block text-sm font-medium text-gray-700 mb-1">
-              TikTok / YouTube URL
+              TikTok / YouTube URL — una por línea para procesar varias
             </label>
-            <input
-              type="text"
+            <textarea
               id="url"
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-              placeholder="https://www.tiktok.com/@chef/video/..."
+              rows={8}
+              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all font-mono text-sm"
+              placeholder={'https://www.tiktok.com/@fernandoatiye/video/...\nhttps://www.tiktok.com/@fernandoatiye/video/...'}
               value={url}
               onChange={(e) => setUrl(e.target.value)}
               disabled={loading}
             />
+            <p className="mt-1 text-xs text-gray-500">
+              Los parámetros de rastreo (?_t=, ?_r=…) se limpian solos. Devuelve JSON listo para pegar en lib/recipes.ts.
+            </p>
           </div>
           
           <button
@@ -82,15 +93,15 @@ export default function TranscribePage() {
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                 </svg>
-                Procesando...
+                Procesando… (puede tardar ~1 min por video)
               </span>
-            ) : 'Generar Receta'}
+            ) : 'Generar Recetas'}
           </button>
         </div>
       </div>
 
       {error && (
-        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg whitespace-pre-wrap font-mono text-sm">
           {error}
         </div>
       )}

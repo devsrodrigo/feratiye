@@ -5,8 +5,8 @@ import Link from 'next/link';
 import SearchBar from './SearchBar';
 import RecipeCard from './RecipeCard';
 import type { Recipe } from '@/lib/recipes';
-import { generateSlug } from '@/lib/recipes';
-import { fuzzySearchItems } from '@/lib/search';
+import { generateSlug, normalizeCategory } from '@/lib/recipes';
+import { searchItems } from '@/lib/search';
 
 interface RecipeSearchSectionProps {
   initialRecipes: Recipe[];
@@ -22,12 +22,10 @@ export default function RecipeSearchSection({ initialRecipes, activeCategory }: 
   const reportHref = activeCategory ? `/recetas/informe/${generateSlug(activeCategory)}` : null;
 
   const filteredRecipes = useMemo(() => {
-    return fuzzySearchItems(initialRecipes, searchValue, (recipe) => [
-      recipe.title,
-      recipe.category,
-      recipe.description,
-      recipe.ingredients.join(' '),
-    ]);
+    return searchItems(initialRecipes, searchValue, (recipe) => ({
+      title: recipe.title,
+      category: normalizeCategory(recipe.category),
+    }));
   }, [initialRecipes, searchValue]);
 
   useEffect(() => {
@@ -97,7 +95,7 @@ export default function RecipeSearchSection({ initialRecipes, activeCategory }: 
               <SearchBar
                 value={searchValue}
                 onChange={setSearchValue}
-                placeholder="Busca por receta, ingrediente o categoría"
+                placeholder="Busca por receta o categoría"
                 inputRef={searchInputRef}
               />
             </div>

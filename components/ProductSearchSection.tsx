@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import SearchBar from './SearchBar';
 import ProductCard from './ProductCard';
 import type { Product } from '@/lib/products';
-import { fuzzySearchItems } from '@/lib/search';
+import { searchItems } from '@/lib/search';
 
 interface ProductSearchSectionProps {
   initialProducts: Product[];
@@ -14,11 +14,9 @@ export default function ProductSearchSection({ initialProducts }: ProductSearchS
   const [searchValue, setSearchValue] = useState('');
 
   const filteredProducts = useMemo(() => {
-    return fuzzySearchItems(initialProducts, searchValue, (product) => [
-      product.name,
-      product.description,
-      product.longDescription,
-    ]);
+    return searchItems(initialProducts, searchValue, (product) => ({
+      title: product.name,
+    }));
   }, [initialProducts, searchValue]);
 
   return (
